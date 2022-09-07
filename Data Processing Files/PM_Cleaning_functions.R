@@ -31,18 +31,18 @@ library(lubridate)
 
 
 #SET THE WORKING DIRECTORY HERE
-wd <- getwd()
-setwd(wd)
+#wd <- getwd()
+#setwd(wd)
 
 #if getwd() does not work, you can instead un-comment the following line with the correct directory
 #of your computer
 #setwd("/Users/tehyastockman/DDPHE/PM_Data_Cleaning/")
 
 #Make sure these files are included in the same folder as this current script
-source("lunar_processing.R")
-source("clarity_processing.R")
-source("airnow_processing.R")
-source("met_processing2.R")
+source(paste(proc_files_dir, "lunar_processing.R", sep = '/'))
+source(paste(proc_files_dir,"clarity_processing.R", sep = '/'))
+source(paste(proc_files_dir,"airnow_processing.R", sep = '/'))
+source(paste(proc_files_dir,"met_processing2.R", sep = '/'))
 site_metadata <- read.csv("Sensor_MetaData_Compiled.csv")
 
 #CHANGE THE FOLDER HERE, this folder should be same folder as this current script
@@ -52,12 +52,12 @@ folder_year <- "2022"
 folder_month <- "202206"
 # This is to paste the folder_year and folder_month together to make the appropriate file path
 file_folder <- paste(folder_year, folder_month, sep = "/")
-data_dir <- paste("Raw_Data", file_folder, sep = "/")
+data_dir <- paste(aq_raw_dir, file_folder, sep = "/")
 
 #For the output data, I created a folder structure within /Processed_Data of the year for each 
 #year of data, each month data is saved to the corresponding year
 #data_dir <- "troubleshoot"
-output_dir <- paste("Processed_Data", folder_year, sep = "/")
+output_dir <- paste(aq_data_dir, folder_year, sep = "/")
 
 AQ_files <- list.files(data_dir)
 
