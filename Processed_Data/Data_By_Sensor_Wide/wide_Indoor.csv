@@ -1,0 +1,3 @@
+"","date","ID","SensorType","Lat","Long","start_date","date_days","age_days","age_weeks","val.pm25_p"
+"1","2018-01-25 18:00:00","Indoor",NA,NA,NA,2018-01-25,2018-01-25,0,0,105.876363636364
+"2","2018-01-25 19:00:00","Indoor",NA,NA,NA,2018-01-25,2018-01-25,0,0,14.6712

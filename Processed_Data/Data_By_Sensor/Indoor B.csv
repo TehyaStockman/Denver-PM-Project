@@ -1,0 +1,3 @@
+"","date","ID","Site","SensorType","Lat","Long","parameter","val","flag","parameter_units"
+"1","2018-01-25 18:00:00","Indoor B",NA,NA,NA,NA,"pm25_p",105.876363636364,"","ug/m3"
+"2","2018-01-25 19:00:00","Indoor B",NA,NA,NA,NA,"pm25_p",14.6712,"","ug/m3"

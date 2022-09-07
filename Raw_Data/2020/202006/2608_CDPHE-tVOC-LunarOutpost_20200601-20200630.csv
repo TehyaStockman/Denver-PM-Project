@@ -1,0 +1,6 @@
+InstrumentName, CDPHE-tVOC-LunarOutpost,,,,,,
+StartTime, 2020-06-01 00:00:00,,,,,,
+EndTime, 2020-06-30 23:59:59,,,,,,
+Date,IH,IT,Lat,Long,P,Sig,TVOC
+06/25/2020 14:54:00.000000,33.2,76.85,0.0,0.0,821.65,-104.0,2.3689999999999998
+                
