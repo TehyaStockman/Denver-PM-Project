@@ -1,5 +1,19 @@
 met_processing <- function(raw_data){
 
+  library(data.table)
+  library(dplyr)
+  library(tidyr)
+  library(fs)
+  library(tidyverse)
+  library(stringr)
+  library(chron)
+  library(openair)
+  library(naniar)
+  library(ggplot2)
+  library(pracma)
+  library(splitstackshape)
+  library(lubridate)
+
   #Check which is processed vs. unprocessed data
   if("Ambient.Avg.Temperature" %in% colnames(raw_data))
   {names(raw_data)[names(raw_data) == "Ambient.Avg.Temperature"] <- "Outdoor.Temperature"}

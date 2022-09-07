@@ -1,6 +1,19 @@
 airnow_processing <- function(raw_data){
 
-  
+  library(data.table)
+  library(dplyr)
+  library(tidyr)
+  library(fs)
+  library(tidyverse)
+  library(stringr)
+  library(chron)
+  library(openair)
+  library(naniar)
+  library(ggplot2)
+  library(pracma)
+  library(splitstackshape)
+  library(lubridate)
+
   ##This part would create columns of values for the sensor ID, sensor type, and lat/long
 
   

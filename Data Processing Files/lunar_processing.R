@@ -40,6 +40,20 @@ lunar_processing <- function(raw_data) {
   
   raw_data <- raw_data[keeps]
   
+  library(data.table)
+  library(dplyr)
+  library(tidyr)
+  library(fs)
+  library(tidyverse)
+  library(stringr)
+  library(chron)
+  library(openair)
+  library(naniar)
+  library(ggplot2)
+  library(pracma)
+  library(splitstackshape)
+  library(lubridate)
+
 
   # #Files are named with "blabla".val because this will help lining up a similar naming structure with the corresponding flags
   # #By making the naming consistent, merging the data into a long format is simple to do
