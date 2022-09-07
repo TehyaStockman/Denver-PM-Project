@@ -78,10 +78,10 @@ AQ_files <- list.files(data_dir)
 #____________________________ Looping Through Data _____________________________________
 #Creating a dictionary of file names to look up that link to data tables
 data <- list()
-#AQ_data <- data.frame(matrix(ncol = 9, nrow = 0))
+AQ_data <- data.frame(matrix(ncol = 9, nrow = 0))
 
 
-AQ_data <- foreach(filename = AQ_files, .combine = rbind) %dopar%{
+air_data <- foreach(filename = AQ_files, .combine = rbind) %dopar%{
   #shortname <- str_match(filename, "[0-9]*_(.*)_[0-9]*-[0-9]*\\.csv")
   #shortname <- shortname[2]
   #shortname <- substring(readLines(file(paste(data_dir,filename, sep = "/")), 1), 17)
@@ -119,7 +119,7 @@ AQ_data <- foreach(filename = AQ_files, .combine = rbind) %dopar%{
   
   #Add Data to list
   data[shortname] <- list(processed_data)
-  #AQ_data <- rbind(AQ_data, processed_data)
+  processed_data
 }
 
 #CHANGE THE FILE NAME HERE
@@ -127,7 +127,7 @@ AQ_data <- foreach(filename = AQ_files, .combine = rbind) %dopar%{
 # setwd(paste("/Users/tehyastockman/DDPHE/PM_Data_Cleaning", output_dir, sep = "/"))
 
 new_file_path <- paste(output_dir, folder_month, sep = "/")
-write.csv(AQ_data, paste(new_file_path,"csv", sep = "."), row.names = FALSE)
+write.csv(air_data, paste(new_file_path,"csv", sep = "."), row.names = FALSE)
 
 #This is to double check the monthly data to make sure everything looks good
 # AQ_monthly_data <- AQ_data
