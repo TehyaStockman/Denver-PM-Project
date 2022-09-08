@@ -1,18 +1,6 @@
 met_processing2 <- function(raw_data){
   
-  library(data.table)
-  library(dplyr)
-  library(tidyr)
-  library(fs)
-  library(tidyverse)
-  library(stringr)
-  library(chron)
-  library(openair)
-  library(naniar)
-  library(ggplot2)
-  library(pracma)
-  library(splitstackshape)
-  library(lubridate)
+
   #Check which is processed vs. unprocessed data
   if("Ambient.Avg.Temperature" %in% colnames(raw_data))
   {names(raw_data)[names(raw_data) == "Ambient.Avg.Temperature"] <- "Outdoor.Temperature"}
@@ -32,6 +20,20 @@ met_processing2 <- function(raw_data){
   
   
   raw_data <- raw_data[keeps]
+  
+  library(data.table)
+  library(dplyr)
+  library(tidyr)
+  library(fs)
+  library(tidyverse)
+  library(stringr)
+  library(chron)
+  library(openair)
+  library(naniar)
+  library(ggplot2)
+  library(pracma)
+  library(splitstackshape)
+  library(lubridate)
   
   names(raw_data)[names(raw_data) == "Date"] <- "date"
   if("Outdoor.Temperature" %in% colnames(raw_data)){
@@ -55,7 +57,7 @@ met_processing2 <- function(raw_data){
   
   
   #Averaging the data to 1 hour interval, threshold of 75%
-  # raw_data <- timeAverage(raw_data, avg.time = "hour", data.thresh = 75)
+  raw_data <- timeAverage(raw_data, avg.time = "hour", data.thresh = 75)
   
   raw_data <- merged.stack(raw_data, var.stubs = c("val", "flag"), 
                            sep = "var.stubs", atStart = FALSE)[, .time_1 := sub(

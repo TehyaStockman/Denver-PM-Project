@@ -118,7 +118,6 @@ air_data <- foreach(filename = AQ_files, .combine = rbind) %dopar%{
   
   
   #Add Data to list
-  data[shortname] <- list(processed_data)
   processed_data
 }
 
