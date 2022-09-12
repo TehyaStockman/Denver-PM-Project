@@ -110,35 +110,44 @@ for (monitor in ref_monitor_list){
   i = i +1
 }
 
-#Create dict of merged data frames to loop through, sitename mapped to data frame
-
-
-
+#Each algorithm created will utilize different variable combinations
+#dictionary of variables and what to name each combination
+var_list <- c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'smokey')
+ref_pm <- 'val.pm25_p.y'
+alg_list <- c('lm', 'rft', 'knn')
 
 #Create For loop to make merged data files and save them
 #Make sure the dates are in the correct format
 
+AQ_files <- list.files(alg_data_dir)
 
+aq_algs <- foreach(filename = AQ_files) %:%{
+  foreach(alg = alg_list) %:% {
+    foreach(var = var_list) %dopar%{
 
+      site_data <- read.csv(filename) ## Make complete
+      
+      
+    }
+  }
+}
 
+#([function, filename, variables])
 
 #output: write files with the following name: sitename_merged_collo.csv
 
 ###---------------------------------------------------------###
 ##NEXT STEP ## Take merged data and create algorithms
 
-#Each algorithm created will utilize different variable combinations
-#dictionary of variables and what to name each combination
-var_list <- c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'smokey')
-alg_list <- c('raw', 'processed', 'lm', 'rft', 'knn')
+
 
 
 #sitename_algtype#.csv
 
 
+#https://cran.r-project.org/web/packages/foreach/vignettes/nested.html
 #foreach-- looping through site pairs, algorithm types, variable types
 #initialize same random starting number
 #add to 
 
-
-
+#make if statements to point to different functions
