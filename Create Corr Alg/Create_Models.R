@@ -1,4 +1,5 @@
 #Create Correction Algorithms Using Reference Monitors
+install.packages('rlist')
 
 library(caret)
 library(data.table)
@@ -13,6 +14,7 @@ library(ggpubr)
 library(naniar)
 library(mlbench)
 library(Metrics)
+library(rlist)
 
 #Algorithms include:
 #Random Forest Tree
@@ -112,7 +114,14 @@ for (monitor in ref_monitor_list){
 
 #Each algorithm created will utilize different variable combinations
 #dictionary of variables and what to name each combination
-var_list <- c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'smokey')
+var_dict <- list('all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'smokey'),
+    'age' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x'),
+    'smoke' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'smokey'),
+    'met' = c('val.pm25_r', 'val.humidity', 'val.temperature'),
+    'raw' = c('val.pm25_r'))
+
+var_list <- list('all', 'age', 'smoke', 'met', 'raw')
+
 ref_pm <- 'val.pm25_p.y'
 alg_list <- c('lm', 'rft', 'knn')
 
@@ -121,16 +130,49 @@ alg_list <- c('lm', 'rft', 'knn')
 
 AQ_files <- list.files(alg_data_dir)
 
-aq_algs <- foreach(filename = AQ_files) %:%{
-  foreach(alg = alg_list) %:% {
-    foreach(var = var_list) %dopar%{
+aq_models <- c()
 
-      site_data <- read.csv(filename) ## Make complete
+
+for(file in AQ_files){
+  #temp_data <- list()
+  
+  
+  for (alg in alg_list){
+    
+    for(var in seq(1,length(var_dict))){
+      aq_data_file <- file
+      model_name <- gsub('.csv', '', file) #remove ".csv" from name
       
+      model_name <- paste(model_name, alg, names(var_dict[var]))
+      
+      temp_data<- list(model_name, aq_data_file, alg, var_dict[var])
+      
+      aq_models <- list.append(aq_models, temp_data)
       
     }
+    
   }
+  
 }
+
+
+foreach(i = length(aq_models)) %dopar%{
+  model_index <- aq_models[i]
+  
+  #read in csv file
+  name_model <- model_index[[1]][1]
+  data_for_model <- read.csv(model_index[[1]][2])
+  model_type <- model_index[[1]][3]
+  model_variables <- model_index[[1]][[4]][1]
+  
+  
+  model <- create_model(name_model, 
+                      data_for_model, model_type, model_variables)
+  
+}
+
+
+# c(filename, c(data, function, variables))
 
 #([function, filename, variables])
 
