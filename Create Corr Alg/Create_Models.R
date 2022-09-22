@@ -16,6 +16,9 @@ library(mlbench)
 library(Metrics)
 library(rlist)
 
+
+library(foreach)
+library(doParallel)
 #Algorithms include:
 #Random Forest Tree
 #Multi-linear Regression
@@ -118,9 +121,9 @@ var_dict <- list('all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age
     'age' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x'),
     'smoke' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'smokey'),
     'met' = c('val.pm25_r', 'val.humidity', 'val.temperature'),
-    'raw' = c('val.pm25_r'))
+    'pm_raw' = c('val.pm25_r'))
 
-var_list <- list('all', 'age', 'smoke', 'met', 'raw')
+var_list <- list('all', 'age', 'smoke', 'met', 'pm_raw')
 
 ref_pm <- 'val.pm25_p.y'
 alg_list <- c('lm', 'rft', 'knn')
@@ -130,7 +133,7 @@ alg_list <- c('lm', 'rft', 'knn')
 
 AQ_files <- list.files(alg_data_dir)
 
-aq_models <- c()
+aq_models <- list()
 
 
 for(file in AQ_files){
@@ -150,25 +153,27 @@ for(file in AQ_files){
       aq_models <- list.append(aq_models, temp_data)
       
     }
-    
   }
-  
 }
 
 
-foreach(i = length(aq_models)) %dopar%{
+source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
+all_models <- foreach(i = length(aq_models)) %dopar%{
   model_index <- aq_models[i]
   
   #read in csv file
-  name_model <- model_index[[1]][1]
-  data_for_model <- read.csv(model_index[[1]][2])
-  model_type <- model_index[[1]][3]
+  name_model <- model_index[[1]][[1]]
+  data_for_model <- 'cheese' #read.csv(model_index[[1]][2])
+  filename <- model_index[[1]][2]
+  model_type <- model_index[[1]][[3]]
   model_variables <- model_index[[1]][[4]][1]
   
   
   model <- create_model(name_model, 
                       data_for_model, model_type, model_variables)
-  
+
+  model_file <- paste(corr_alg_dir, filename, sep = '/')
+  write.csv(model, model_file)
 }
 
 

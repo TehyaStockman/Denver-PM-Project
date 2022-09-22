@@ -23,5 +23,6 @@ streets_dir <- paste(wd, 'street_routes', sep = '/')
 
 meta_data_dir <- paste(wd, 'Meta_Data', sep = '/')
 alg_data_dir <- paste(wd, 'Data_from_Alg', sep = '/')
+corr_alg_dir <- paste(wd, 'Corr_Alg_Dir', sep = '/')
 
 

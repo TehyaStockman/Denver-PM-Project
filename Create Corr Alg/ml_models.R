@@ -4,8 +4,33 @@
 #input a dataframe from each site
 #input list of variables to perform operation
 
-create_model <- function(){
+create_model <- function(name_model, data_for_model, model_type, model_variables){
+  #bring in data/models to pass through
   #choose model function redirects to one of the 3 models depending on the inputs
+  if(model_type == 'ln'){
+    #model <- linear_reg(name_model, site_data, variables)
+    return('ln_cheese')
+  }
+  else if(model_type == 'knn'){
+    #model <- knn_model(name_model, site_data, variables)
+    return('knn_steak')
+  }
+  else if(model_type == 'rft'){
+    #model <- rft_model(name_model, site_data, variables)
+    return('rft_beef')
+  }
+  else{
+    next
+  }
+  #return(model)
+  #return(name_model)
+
+}
+
+evaluate_model <- function(){
+  #purpose of this function is to evaluate each model that is created
+  #
+  
   
 }
 
