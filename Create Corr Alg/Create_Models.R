@@ -15,10 +15,10 @@ library(naniar)
 library(mlbench)
 library(Metrics)
 library(rlist)
-
-
 library(foreach)
 library(doParallel)
+
+
 #Algorithms include:
 #Random Forest Tree
 #Multi-linear Regression
@@ -84,6 +84,9 @@ sensor_list <- c('wide_CAMP COllo (CS13).csv', 'wide_I-25 Denver Collo (CS16).cs
 smoke_events <- read.csv(paste(meta_data_dir, 'smokey_events.csv', sep = '/'))
 smoke_events <- smoke_events[,-1]
 
+
+
+
 column_list <- c('date', 'age_days.x', 'age_weeks.x', 'val.humidity', 
                  'val.temperature', 'val.pm25_r', 'val.pm25_p.y', 'flag')
 
@@ -100,14 +103,28 @@ for (monitor in ref_monitor_list){
   #merge ref data and sensor data
   all_data <- merge(sensor_data, ref_data, by = 'date', all.x = TRUE)
   
-  #Remove NA values from the data set
-  #all_data <- drop_na(all_data)
   
   #merge smokey data with ref data
   all_data2 <- merge(x = all_data, y = smoke_events, by = 'date', all = TRUE)
   
+  all_data2$flag2[all_data2$flag == 'smoke'] <- 1
+  all_data2$flag2[all_data2$flag == 'smoke?'] <- 1
+  all_data2$flag2[is.na(all_data2$flag)] <-0
+  
+  names(all_data2)[names(all_data2) == "flag"] <- "flag3"
+  names(all_data2)[names(all_data2) == "flag2"] <- "flag"
+  
+  #make sure columns are all correctly labeled
+  if("val.temperature.x" %in% colnames(all_data2))
+  {names(all_data2)[names(all_data2) == "val.temperature.x"] <- "val.temperature"}
+  
   #Select subset of data that is needed for this analysis
   all_data2 <- subset(all_data2, select = column_list)
+
+  #Remove NA values from the data set
+  all_data2 <- drop_na(all_data2)
+  
+  all_data2 <- distinct(all_data2, .keep_all = TRUE)
   
   #write data to file
   write.csv(all_data2, paste(alg_data_dir, '/', sitename, '.csv', sep = ''))
@@ -115,11 +132,16 @@ for (monitor in ref_monitor_list){
   i = i +1
 }
 
+########################################################
+##################!!!!!!!!!!!!!!!!!####################
 #Each algorithm created will utilize different variable combinations
 #dictionary of variables and what to name each combination
-var_dict <- list('all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'smokey'),
+
+#Initialize Environment before running the rest
+
+var_dict <- list('all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'flag'),
     'age' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x'),
-    'smoke' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'smokey'),
+    'smoke' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'flag'),
     'met' = c('val.pm25_r', 'val.humidity', 'val.temperature'),
     'pm_raw' = c('val.pm25_r'))
 
@@ -148,7 +170,7 @@ for(file in AQ_files){
       
       model_name <- paste(model_name, alg, names(var_dict[var]))
       
-      temp_data<- list(model_name, aq_data_file, alg, var_dict[var])
+      temp_data<- list(model_name, aq_data_file, alg, var_dict[[var]])
       
       aq_models <- list.append(aq_models, temp_data)
       
@@ -156,25 +178,59 @@ for(file in AQ_files){
   }
 }
 
-
 source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
-all_models <- foreach(i = length(aq_models)) %dopar%{
-  model_index <- aq_models[i]
-  
-  #read in csv file
-  name_model <- model_index[[1]][[1]]
-  data_for_model <- 'cheese' #read.csv(model_index[[1]][2])
-  filename <- model_index[[1]][2]
-  model_type <- model_index[[1]][[3]]
-  model_variables <- model_index[[1]][[4]][1]
-  
-  
-  model <- create_model(name_model, 
-                      data_for_model, model_type, model_variables)
 
-  model_file <- paste(corr_alg_dir, filename, sep = '/')
+
+
+#try with less data
+aq_models_short <- aq_models[1:5]
+model_names <- c()
+
+all_model_data <- foreach(model_index = aq_models_short) %dopar%{
+  #model_index <- aq_models_short[i]
+  #source('initialize_environment.R')
+  #source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
+  
+  #initialize_env()
+  #read in csv file
+  name_model <- model_index[[1]]
+  data_for_model <- read.csv(paste(alg_data_dir, model_index[[2]], sep = '/'))
+  filename <- model_index[[2]]
+  model_type <- model_index[[3]]
+  model_variables <- model_index[[4]]
+  
+  
+  model <- create_model(name_model,
+                     data_for_model, model_type, model_variables)
+  
+  model_filename <- paste(name_model, '.csv', sep = '')
+  model_file <- paste(corr_alg_dir, model_filename, sep = '/')
+  
   write.csv(model, model_file)
+  model_variables
 }
+
+
+#Test the code
+model_test <- aq_models_short[1]
+
+test_name <- model_test[[1]][[1]]
+test_data <- read.csv(paste(alg_data_dir, model_test[[1]][[2]], sep = '/'))
+
+test_model_type <- model_test[[1]][[3]]
+model_variables <- model_test[[1]][[4]]
+
+
+model <- create_model(test_name,
+                      test_data, test_model_type, model_variables)
+
+
+model_filename <- paste(test_name, '.csv', sep = '')
+model_file <- paste(corr_alg_dir, model_filename, sep = '/')
+
+write.csv(model, model_file)
+
+
 
 
 # c(filename, c(data, function, variables))

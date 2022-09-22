@@ -7,22 +7,41 @@
 create_model <- function(name_model, data_for_model, model_type, model_variables){
   #bring in data/models to pass through
   #choose model function redirects to one of the 3 models depending on the inputs
-  if(model_type == 'ln'){
-    #model <- linear_reg(name_model, site_data, variables)
-    return('ln_cheese')
+  library(caret)
+  library(data.table)
+  library(dplyr)
+  library(tidyr)
+  library(tidyverse)
+  library(stringr)
+  library(chron)
+  library(lubridate)
+  library(shipunov)
+  library(ggpubr)
+  library(naniar)
+  library(mlbench)
+  library(Metrics)
+  library(rlist)
+  library(foreach)
+  library(doParallel)
+  
+  if(model_type == 'lm'){
+    model <- linear_reg(name_model, data_for_model, model_variables)
+    #model <- "cheese"
+    return(model)
   }
   else if(model_type == 'knn'){
-    #model <- knn_model(name_model, site_data, variables)
-    return('knn_steak')
+    model <- knn_model(name_model, data_for_model, model_variables)
+    return(model)
+    
   }
   else if(model_type == 'rft'){
-    #model <- rft_model(name_model, site_data, variables)
-    return('rft_beef')
+    model <- rft_model(name_model, data_for_model, model_variables)
+    return(model)
+    
   }
   else{
-    next
+    return('did not pass')
   }
-  #return(model)
   #return(name_model)
 
 }
@@ -37,11 +56,12 @@ evaluate_model <- function(){
 linear_reg <- function(model_name, site_data, variables){
 
   set.seed(1234)
-  temp_data <-subset(site_data, select= variables)
+  temp_data <-subset(site_data, select= c(variables))
   fit_ln <-train(val.pm25_p.y ~., data=site_data, method="lm",
                trControl=trainControl(method="cv", verboseIter =T),
                na.action = na.pass)
-  fit_ln
+  print('model_name')
+  return(fit_ln)
 }
 
 
