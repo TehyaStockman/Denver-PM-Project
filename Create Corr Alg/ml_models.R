@@ -30,13 +30,17 @@ create_model <- function(name_model, data_for_model, model_type, model_variables
     return(model)
   }
   else if(model_type == 'knn'){
-    model <- knn_model(name_model, data_for_model, model_variables)
-    return(model)
+    #model <- knn_model(name_model, data_for_model, model_variables)
+    return('')
     
   }
   else if(model_type == 'rft'){
+    if (grepl('pm_raw', name_model)){
+      return()
+    } 
+    else{
     model <- rft_model(name_model, data_for_model, model_variables)
-    return(model)
+    return(model)}
     
   }
   else{
@@ -54,10 +58,9 @@ evaluate_model <- function(){
 }
 
 linear_reg <- function(model_name, site_data, variables){
-
   set.seed(1234)
-  temp_data <-subset(site_data, select= c(variables))
-  fit_ln <-train(val.pm25_p.y ~., data=site_data, method="lm",
+  temp_data <-site_data[c(variables, 'val.pm25_p.y')]
+  fit_ln <-train(val.pm25_p.y ~., data=temp_data, method="lm",
                trControl=trainControl(method="cv", verboseIter =T),
                na.action = na.pass)
   print('model_name')
@@ -71,13 +74,13 @@ knn_model <- function(site_data, variables){
   
 }
 
-rft_model <- function(site_data, variables){
+rft_model <- function(model_name, site_data, variables){
   
   library(ranger)
   set.seed(1234)
-  read.csv(filename) ## Make complete
   ##Create a function that takes in the variables and returns the model
-  fit_rft <- train(val.pm25_p.y ~., data=site_data, method="ranger",
+  temp_data <-site_data[c(variables, 'val.pm25_p.y')]
+  fit_rft <- train(val.pm25_p.y ~., data=temp_data, method="ranger",
                trControl=trainControl(method="cv", verboseIter =F),
                num.trees=100,
                importance="permutation", na.action = na.pass)

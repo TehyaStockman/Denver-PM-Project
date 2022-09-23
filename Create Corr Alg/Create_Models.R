@@ -183,7 +183,7 @@ source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
 
 
 #try with less data
-aq_models_short <- aq_models[1:5]
+aq_models_short <- aq_models[21:90]
 model_names <- c()
 
 all_model_data <- foreach(model_index = aq_models_short) %dopar%{
@@ -195,6 +195,8 @@ all_model_data <- foreach(model_index = aq_models_short) %dopar%{
   #read in csv file
   name_model <- model_index[[1]]
   data_for_model <- read.csv(paste(alg_data_dir, model_index[[2]], sep = '/'))
+  data_for_model <- data_for_model[-1]
+  
   filename <- model_index[[2]]
   model_type <- model_index[[3]]
   model_variables <- model_index[[4]]
@@ -203,32 +205,50 @@ all_model_data <- foreach(model_index = aq_models_short) %dopar%{
   model <- create_model(name_model,
                      data_for_model, model_type, model_variables)
   
-  model_filename <- paste(name_model, '.csv', sep = '')
+  
+  model_filename <- paste(name_model, '.rds', sep = '')
   model_file <- paste(corr_alg_dir, model_filename, sep = '/')
   
-  write.csv(model, model_file)
+  saveRDS(model, model_file)
   model_variables
 }
 
 
 #Test the code
-model_test <- aq_models_short[1]
+model_test <- aq_models_short[4]
 
 test_name <- model_test[[1]][[1]]
 test_data <- read.csv(paste(alg_data_dir, model_test[[1]][[2]], sep = '/'))
+test_data <- test_data[-1]
 
 test_model_type <- model_test[[1]][[3]]
 model_variables <- model_test[[1]][[4]]
+
+set.seed(1234)
+temp_data <-subset(test_data, select= c(val.humidity, val.pm25_r, val.pm25_p.y))
+fit_ln <-train(val.pm25_p.y ~., data=temp_data, method="lm",
+               trControl=trainControl(method="cv", verboseIter =T),
+               na.action = na.pass)
+
+library(ranger)
+set.seed(1234)
+read.csv(filename) ## Make complete
+##Create a function that takes in the variables and returns the model
+temp_data <-site_data[c(model_variables, 'val.pm25_p.y')]
+fit_rft <- train(val.pm25_p.y ~., data=temp_data, method="ranger",
+                 trControl=trainControl(method="cv", verboseIter =F),
+                 num.trees=100,
+                 importance="permutation", na.action = na.pass)
+
 
 
 model <- create_model(test_name,
                       test_data, test_model_type, model_variables)
 
 
-model_filename <- paste(test_name, '.csv', sep = '')
+model_filename <- paste(test_name, '.rds', sep = '')
 model_file <- paste(corr_alg_dir, model_filename, sep = '/')
-
-write.csv(model, model_file)
+saveRDS(model, model_file)
 
 
 
