@@ -50,10 +50,27 @@ create_model <- function(name_model, data_for_model, model_type, model_variables
 
 }
 
-evaluate_model <- function(){
+evaluate_model <- function(site_data_name, corr_alg, site_data){
   #purpose of this function is to evaluate each model that is created
-  #
+  #bring data files of merged data with the various fits created
+  #List of fits and the different sites used to evaluate the data
   
+  #need a list of all of the combinations, or two for loops
+  #create name for the new dataframe
+  #create column name based on the model being used
+  
+  coef(corr_alg$finalModel)
+  
+  data_model_all$pm25_fit1<-predict(corr_alg, site_data)
+  
+  cor(data_model_all$val.pm25_p.y, data_model_all$pm25_fit1)
+  rmse(data_model_all$val.pm25_p.y, data_model_all$pm25_fit1)
+  mae(data_model_all$val.pm25_p.y, data_model_all$pm25_fit1)
+  bias(data_model_all$val.pm25_p.y, data_model_all$pm25_fit1)
+  
+  data_cs_hr$pm_fit1<-predict(fit1, data_cs_hr)
+  
+  #output a row that can be added to a table to combine all together###
   
 }
 
