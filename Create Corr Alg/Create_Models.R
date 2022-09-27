@@ -1,5 +1,6 @@
 #Create Correction Algorithms Using Reference Monitors
 install.packages('rlist')
+install.packages('tools')
 
 library(caret)
 library(data.table)
@@ -17,6 +18,7 @@ library(Metrics)
 library(rlist)
 library(foreach)
 library(doParallel)
+library(tools)
 
 
 #Algorithms include:
@@ -225,7 +227,11 @@ for(alg_file in corr_alg_files){
   
   for(file in AQ_files){
     
-    temp_list<- list(file, alg_file)
+    #do not include any file from the list that match
+    if(grepl(file_path_sans_ext(file), alg_file, fixed = TRUE))
+    { next
+      } else{
+        temp_list<- list(file, alg_file)}
     
     aq_corr_alg_models <- list.append(aq_corr_alg_models, temp_list)
     
@@ -233,11 +239,58 @@ for(alg_file in corr_alg_files){
   
 }
 
+
+
+
 #Call the evaluation function to create
-all_corr_alg_models <- foreach() %dopar% {
+alg_stats_of_site <- data.frame(matrix(ncol = 5, nrow = 0))
+source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
+
+
+all_corr_alg_models <- foreach(alg_model_index = aq_corr_alg_models, .combine='rbind') %dopar% {
+  library(tools)
+  site_data_name <- alg_model_index[[1]]
+  corr_alg_name <- alg_model_index[[2]]
   
+  site_data <- read.csv(paste(alg_data_dir, site_data_name, sep = '/'))
+  site_data <- site_data[-1]
+  
+  corr_alg <- readRDS(paste(corr_alg_dir, corr_alg_name, sep = '/'))
+  
+  alg_site_name <- paste(file_path_sans_ext(site_data_name), 
+                         file_path_sans_ext(corr_alg_name))
+
+  
+  
+  alg_stats_of_site <- evaluate_model(alg_site_name,
+                                      site_data, corr_alg)
+  
+  
+  alg_stats_of_site
 }
 
+#test for loop
+for(alg_model_index in aq_corr_alg_models){
+
+  site_data_name <- alg_model_index[[1]]
+  corr_alg_name <- alg_model_index[[2]]
+  
+  site_data <- read.csv(paste(alg_data_dir, site_data_name, sep = '/'))
+  site_data <- site_data[-1]
+  
+  corr_alg <- readRDS(paste(corr_alg_dir, corr_alg_name, sep = '/'))
+  
+  alg_site_name <- paste(file_path_sans_ext(site_data_name), 
+                         file_path_sans_ext(corr_alg_name))
+  
+  
+  
+  alg_stats <- evaluate_model(alg_site_name,
+                                      site_data, corr_alg)
+  
+  
+  alg_stats_of_site <- rbind(alg_stats_of_site, alg_stats)
+}
 
 #Test Evaluation of Model
 
