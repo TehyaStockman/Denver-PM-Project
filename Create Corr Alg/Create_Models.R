@@ -293,17 +293,59 @@ for(alg_model_index in aq_corr_alg_models){
 }
 
 #Test Evaluation of Model
+'wide_SAMS MET.csv'
+'wide_Swansea Elementary (CS7).csv'
 
+data_dir <- paste(aq_data_dir, 'Data_By_Sensor_Wide', sep = '/')
+
+SAMS_data <- read.csv(paste(data_dir, 'wide_SAMS MET.csv', sep = '/'))
+SAMS_data <- SAMS_data[-1]
+
+swansea_data <- read.csv(paste(data_dir, 'wide_Swansea Elementary (CS7).csv', sep = '/'))
+
+
+column_list <- c('date', 'age_days.x', 'age_weeks.x',  
+                  'val.pm25_p.x', 'val.pm25_p.y')
+
+#merge ref data and sensor data
+all_data <- merge(swansea_data, SAMS_data, by = 'date', all.x = TRUE)
+
+
+#make sure columns are all correctly labeled
+if("val.temperature.x" %in% colnames(all_data))
+{names(all_data)[names(all_data) == "val.temperature.x"] <- "val.temperature"}
+
+#Select subset of data that is needed for this analysis
+all_data <- subset(all_data, select = column_list)
+
+#Remove NA values from the data set
+all_data2 <- drop_na(all_data)
+
+all_data2 <- distinct(all_data2, .keep_all = TRUE)
+
+#write data to file
+write.csv(all_data2, paste(alg_data_dir, '/', 'all SAMS', '.csv', sep = ''))
+
+
+
+
+
+####Stuff
 data_folder <- alg_data_dir
 
-site_data <- read.csv(paste(data_folder, 'La Casa State Site.csv', sep = '/'))
+site_data <- read.csv(paste(data_folder, 'all SAMS.csv', sep = '/'))
 site_data <- site_data[-1]
 
-corr_alg <- readRDS(paste(corr_alg_dir, 'I-25 Globeville State Site lm smoke.rds', sep = '/'))
+corr_alg <- readRDS(paste(corr_alg_dir, 'La Casa State Site rft met.rds', sep = '/'))
 
 coef(corr_alg$finalModel)
 
 site_data$pm25_fit1<-predict(corr_alg, site_data)
+
+cor(site_data$val.pm25_p.y, site_data$val.pm25_p.x)
+rmse(site_data$val.pm25_p.y, site_data$val.pm25_p.x)
+mae(site_data$val.pm25_p.y, site_data$val.pm25_p.x)
+bias(site_data$val.pm25_p.y, site_data$val.pm25_p.x)
 
 #each of these are 1 number
 cor(site_data$val.pm25_p.y, site_data$pm25_fit1)
@@ -311,7 +353,12 @@ rmse(site_data$val.pm25_p.y, site_data$pm25_fit1)
 mae(site_data$val.pm25_p.y, site_data$pm25_fit1)
 bias(site_data$val.pm25_p.y, site_data$pm25_fit1)
 
+library(openair)
+library(ggplot2)
+scatterPlot(site_data$val.pm25_p.y, site_data$pm25_fit1)
 
+ggplot(site_data, aes(x=val.pm25_p.y, y=val.pm25_p.x)) + geom_point() +  geom_smooth(method=lm)+
+ stat_regline_equation()
 
 
 # #Test the code
