@@ -50,7 +50,7 @@ create_model <- function(name_model, data_for_model, model_type, model_variables
 
 }
 
-evaluate_model <- function(site_data_name, corr_alg, site_data){
+evaluate_model <- function(site_data_file, corr_alg_file){
   #purpose of this function is to evaluate each model that is created
   #bring data files of merged data with the various fits created
   #List of fits and the different sites used to evaluate the data
@@ -58,6 +58,8 @@ evaluate_model <- function(site_data_name, corr_alg, site_data){
   #need a list of all of the combinations, or two for loops
   #create name for the new dataframe
   #create column name based on the model being used
+  
+  model_name <- ''
   
   coef(corr_alg$finalModel)
   
@@ -71,6 +73,7 @@ evaluate_model <- function(site_data_name, corr_alg, site_data){
   data_cs_hr$pm_fit1<-predict(fit1, data_cs_hr)
   
   #output a row that can be added to a table to combine all together###
+  model_stats <- c()
   
 }
 

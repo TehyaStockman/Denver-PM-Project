@@ -214,41 +214,88 @@ all_model_data <- foreach(model_index = aq_models_short) %dopar%{
 }
 
 
-#Test the code
-model_test <- aq_models_short[4]
+#Create evaluation files and loop for script to evaluate files
 
-test_name <- model_test[[1]][[1]]
-test_data <- read.csv(paste(alg_data_dir, model_test[[1]][[2]], sep = '/'))
-test_data <- test_data[-1]
+corr_alg_files <- list.files(corr_alg_dir)
+AQ_files <- list.files(alg_data_dir)
 
-test_model_type <- model_test[[1]][[3]]
-model_variables <- model_test[[1]][[4]]
+aq_corr_alg_models <- list()
 
-set.seed(1234)
-temp_data <-subset(test_data, select= c(val.humidity, val.pm25_r, val.pm25_p.y))
-fit_ln <-train(val.pm25_p.y ~., data=temp_data, method="lm",
-               trControl=trainControl(method="cv", verboseIter =T),
-               na.action = na.pass)
+for(alg_file in corr_alg_files){
+  
+  for(file in AQ_files){
+    
+    temp_list<- list(file, alg_file)
+    
+    aq_corr_alg_models <- list.append(aq_corr_alg_models, temp_list)
+    
+  }
+  
+}
 
-library(ranger)
-set.seed(1234)
-read.csv(filename) ## Make complete
-##Create a function that takes in the variables and returns the model
-temp_data <-site_data[c(model_variables, 'val.pm25_p.y')]
-fit_rft <- train(val.pm25_p.y ~., data=temp_data, method="ranger",
-                 trControl=trainControl(method="cv", verboseIter =F),
-                 num.trees=100,
-                 importance="permutation", na.action = na.pass)
+#Call the evaluation function to create
+all_corr_alg_models <- foreach() %dopar% {
+  
+}
 
 
+#Test Evaluation of Model
 
-model <- create_model(test_name,
-                      test_data, test_model_type, model_variables)
+data_folder <- alg_data_dir
+
+site_data <- read.csv(paste(data_folder, 'La Casa State Site.csv', sep = '/'))
+site_data <- site_data[-1]
+
+corr_alg <- readRDS(paste(corr_alg_dir, 'I-25 Globeville State Site lm smoke.rds', sep = '/'))
+
+coef(corr_alg$finalModel)
+
+site_data$pm25_fit1<-predict(corr_alg, site_data)
+
+#each of these are 1 number
+cor(site_data$val.pm25_p.y, site_data$pm25_fit1)
+rmse(site_data$val.pm25_p.y, site_data$pm25_fit1)
+mae(site_data$val.pm25_p.y, site_data$pm25_fit1)
+bias(site_data$val.pm25_p.y, site_data$pm25_fit1)
 
 
-model_filename <- paste(test_name, '.rds', sep = '')
-model_file <- paste(corr_alg_dir, model_filename, sep = '/')
-saveRDS(model, model_file)
+
+
+# #Test the code
+# model_test <- aq_models_short[4]
+# 
+# test_name <- model_test[[1]][[1]]
+# test_data <- read.csv(paste(alg_data_dir, model_test[[1]][[2]], sep = '/'))
+# test_data <- test_data[-1]
+# 
+# test_model_type <- model_test[[1]][[3]]
+# model_variables <- model_test[[1]][[4]]
+# 
+# set.seed(1234)
+# temp_data <-subset(test_data, select= c(val.humidity, val.pm25_r, val.pm25_p.y))
+# fit_ln <-train(val.pm25_p.y ~., data=temp_data, method="lm",
+#                trControl=trainControl(method="cv", verboseIter =T),
+#                na.action = na.pass)
+# 
+# library(ranger)
+# set.seed(1234)
+# read.csv(filename) ## Make complete
+# ##Create a function that takes in the variables and returns the model
+# temp_data <-site_data[c(model_variables, 'val.pm25_p.y')]
+# fit_rft <- train(val.pm25_p.y ~., data=temp_data, method="ranger",
+#                  trControl=trainControl(method="cv", verboseIter =F),
+#                  num.trees=100,
+#                  importance="permutation", na.action = na.pass)
+# 
+# 
+# 
+# model <- create_model(test_name,
+#                       test_data, test_model_type, model_variables)
+# 
+# 
+# model_filename <- paste(test_name, '.rds', sep = '')
+# model_file <- paste(corr_alg_dir, model_filename, sep = '/')
+# saveRDS(model, model_file)
 
 
 
@@ -274,3 +321,7 @@ saveRDS(model, model_file)
 #add to 
 
 #make if statements to point to different functions
+
+
+
+
