@@ -185,7 +185,7 @@ source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
 
 
 #try with less data
-aq_models_short <- aq_models[21:90]
+aq_models_short <- aq_models[1:90] #21
 model_names <- c()
 
 all_model_data <- foreach(model_index = aq_models_short) %dopar%{
@@ -197,6 +197,9 @@ all_model_data <- foreach(model_index = aq_models_short) %dopar%{
   #read in csv file
   name_model <- model_index[[1]]
   data_for_model <- read.csv(paste(alg_data_dir, model_index[[2]], sep = '/'))
+  data_for_model <- data_for_model[-1]
+  data_for_model <- data_for_model[-1]
+  data_for_model <- data_for_model[-1]
   data_for_model <- data_for_model[-1]
   
   filename <- model_index[[2]]
@@ -291,6 +294,8 @@ for(alg_model_index in aq_corr_alg_models){
   
   alg_stats_of_site <- rbind(alg_stats_of_site, alg_stats)
 }
+
+write.csv(alg_stats_of_site, 'algorithm_stats_updated.csv')
 
 #Test Evaluation of Model
 'wide_SAMS MET.csv'

@@ -49,7 +49,7 @@ site_metadata <- read.csv("Sensor_MetaData_Compiled.csv")
 #Folders are organized for this script by month and year, so you should modify the month and 
 #year to change the folder of the data that you want
 folder_year <- "2022"
-folder_month <- "202207"
+folder_month <- "202201"
 # This is to paste the folder_year and folder_month together to make the appropriate file path
 file_folder <- paste(folder_year, folder_month, sep = "/")
 data_dir <- paste(aq_raw_dir, file_folder, sep = "/")

@@ -59,7 +59,7 @@ evaluate_model <- function(alg_site_name, site_data, corr_alg){
   #create name for the new dataframe
   #create column name based on the model being used
   
-  model_stats <- data.frame(matrix(ncol = 0, nrow = 0))
+  model_stats <- data.frame(matrix(ncol = 0, nrow = 1))
   
   model_stats$model_name <- alg_site_name
   

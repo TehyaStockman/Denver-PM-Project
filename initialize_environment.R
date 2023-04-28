@@ -6,7 +6,7 @@
 
 #The purpose of this script is to initialize the environment for all of the other
 #processing fore this project
-
+install.packages('openair')
 library(foreach)
 library(doParallel)
 
