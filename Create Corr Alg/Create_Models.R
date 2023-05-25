@@ -90,7 +90,7 @@ smoke_events <- smoke_events[,-1]
 
 
 column_list <- c('date', 'age_days.x', 'age_weeks.x', 'val.humidity', 
-                 'val.temperature', 'val.pm25_r', 'val.pm25_p.y', 'flag')
+                 'val.temperature', 'val.pm25_r', 'val.pm25_p.y', 'flag', 'Ratio')
 
 i <- 1
 
@@ -145,9 +145,14 @@ var_dict <- list('all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age
     'age' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x'),
     'smoke' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'flag'),
     'met' = c('val.pm25_r', 'val.humidity', 'val.temperature'),
-    'pm_raw' = c('val.pm25_r'))
+    'pm_raw' = c('val.pm25_r'),
+    'pm10' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'Ratio'),
+    "pm10_all" = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'flag', 'Ratio'))
 
-var_list <- list('all', 'age', 'smoke', 'met', 'pm_raw')
+var_dict <- list('pm10_all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'flag', 'Ratio'))
+var_list <- list('pm10_all')
+
+var_list <- list('all', 'age', 'smoke', 'met', 'pm_raw', 'pm10', "pm10_all")
 
 ref_pm <- 'val.pm25_p.y'
 alg_list <- c('lm', 'rft', 'knn')
@@ -155,7 +160,9 @@ alg_list <- c('lm', 'rft', 'knn')
 #Create For loop to make merged data files and save them
 #Make sure the dates are in the correct format
 
-AQ_files <- list.files(alg_data_dir)
+#AQ_files <- list.files(alg_data_dir)
+AQ_files <- list.files(new_alg_data_dir)
+
 
 aq_models <- list()
 
@@ -185,7 +192,7 @@ source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
 
 
 #try with less data
-aq_models_short <- aq_models[1:90] #21
+aq_models_short <- aq_models[1:18] #21
 model_names <- c()
 
 all_model_data <- foreach(model_index = aq_models_short) %dopar%{
@@ -196,7 +203,9 @@ all_model_data <- foreach(model_index = aq_models_short) %dopar%{
   #initialize_env()
   #read in csv file
   name_model <- model_index[[1]]
-  data_for_model <- read.csv(paste(alg_data_dir, model_index[[2]], sep = '/'))
+  data_for_model <- read.csv(paste(new_alg_data_dir, model_index[[2]], sep = '/'))
+  data_for_model <- data_for_model[-1]
+  data_for_model <- data_for_model[-1]
   data_for_model <- data_for_model[-1]
   data_for_model <- data_for_model[-1]
   data_for_model <- data_for_model[-1]
@@ -222,7 +231,9 @@ all_model_data <- foreach(model_index = aq_models_short) %dopar%{
 #Create evaluation files and loop for script to evaluate files
 
 corr_alg_files <- list.files(corr_alg_dir)
-AQ_files <- list.files(alg_data_dir)
+#AQ_files <- list.files(alg_data_dir)
+AQ_files <- list.files(new_alg_data_dir)
+
 
 aq_corr_alg_models <- list()
 
@@ -255,7 +266,7 @@ all_corr_alg_models <- foreach(alg_model_index = aq_corr_alg_models, .combine='r
   site_data_name <- alg_model_index[[1]]
   corr_alg_name <- alg_model_index[[2]]
   
-  site_data <- read.csv(paste(alg_data_dir, site_data_name, sep = '/'))
+  site_data <- read.csv(paste(new_alg_data_dir, site_data_name, sep = '/'))
   site_data <- site_data[-1]
   
   corr_alg <- readRDS(paste(corr_alg_dir, corr_alg_name, sep = '/'))
@@ -263,10 +274,12 @@ all_corr_alg_models <- foreach(alg_model_index = aq_corr_alg_models, .combine='r
   alg_site_name <- paste(file_path_sans_ext(site_data_name), 
                          file_path_sans_ext(corr_alg_name))
 
-  
+  #add variables to be put into evaluate_model function for naming purposes
+  eval_site_name <- file_path_sans_ext(site_data_name)
+  corr_site_name <- file_path_sans_ext(corr_alg_name)
   
   alg_stats_of_site <- evaluate_model(alg_site_name,
-                                      site_data, corr_alg)
+                                      site_data, corr_alg, site_data_name, corr_site_name)
   
   
   alg_stats_of_site
@@ -286,10 +299,13 @@ for(alg_model_index in aq_corr_alg_models){
   alg_site_name <- paste(file_path_sans_ext(site_data_name), 
                          file_path_sans_ext(corr_alg_name))
   
+  #add variables to be put into evaluate_model function for naming purposes
+  eval_site_name <- file_path_sans_ext(site_data_name)
+  corr_site_name <- file_path_sans_ext(corr_alg_name)
   
-  
+  #input into evaluation model to create table of stats
   alg_stats <- evaluate_model(alg_site_name,
-                                      site_data, corr_alg)
+                                      site_data, corr_alg, eval_site_name, corr_site_name)
   
   
   alg_stats_of_site <- rbind(alg_stats_of_site, alg_stats)

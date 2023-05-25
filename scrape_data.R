@@ -11,16 +11,16 @@ library(qdapRegex)
 
 aq_data <- read_html('https://www.colorado.gov/airquality/param_summary.aspx?parametercode=81102&seeddate=04%2f18%2f2023&export=False')
 
-aq_data_table <- html_table(html_nodes(aq_data, 'table'))[[3]]
+aq_data_table <- html_table(html_nodes(aq_data, replace(aq_data,'<br />',' ')))[[3]]
 
 
 aq_data_table[, 2] <- unlist(lapply(rm_between(xml_find_all(aq_data, "//table/tbody/tr/td[2]"), 
                                     ">", 
                                     "<br> />", extract=TRUE), 
-                         function(x) gsub("<.*?>", "", x[[2]])))
+                         function(x) gsub("<.*?>", "", x[[3]])))
 
 
-
+stuff <- xml_find_all(aq_data, "//body/tr[4]/")
 
 
 #read webpage

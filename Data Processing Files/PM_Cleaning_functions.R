@@ -59,6 +59,10 @@ data_dir <- paste(aq_raw_dir, file_folder, sep = "/")
 #data_dir <- "troubleshoot"
 output_dir <- paste(aq_data_dir, folder_year, sep = "/")
 
+
+# data_dir <- paste(aq_raw_dir, 'Globeville', sep = '/')
+# output_dir <- paste(aq_data_dir)
+
 AQ_files <- list.files(data_dir)
 
 
@@ -117,6 +121,8 @@ for (filename in AQ_files){
 # setwd(paste("/Users/tehyastockman/DDPHE/PM_Data_Cleaning", output_dir, sep = "/"))
 
 new_file_path <- paste(output_dir, folder_month, sep = "/")
+
+# new_file_path <- paste(output_dir, 'Globeville', sep = '/')
 write.csv(AQ_data, paste(new_file_path,"csv", sep = "."), row.names = FALSE)
 
 #This is to double check the monthly data to make sure everything looks good

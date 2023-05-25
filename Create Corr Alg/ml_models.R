@@ -50,7 +50,7 @@ create_model <- function(name_model, data_for_model, model_type, model_variables
 
 }
 
-evaluate_model <- function(alg_site_name, site_data, corr_alg){
+evaluate_model <- function(alg_site_name, site_data, corr_alg, eval_site_name, corr_site_name){
   #purpose of this function is to evaluate each model that is created
   #bring data files of merged data with the various fits created
   #List of fits and the different sites used to evaluate the data
@@ -69,10 +69,12 @@ evaluate_model <- function(alg_site_name, site_data, corr_alg){
   
   site_data_temp$pm25_fit<-predict(corr_alg, site_data)
   
+  model_stats$EVAL_SITE <- eval_site_name
+  model_stats$CORR_SITE <- corr_site_name
   model_stats$COR <- cor(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
-  model_stats$RMSE <- rmse(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
-  model_stats$MAE <- mae(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
-  model_stats$BIAS <- bias(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
+  model_stats$RMSE <- sqrt(mean((site_data_temp$val.pm25_p.y - site_data_temp$pm25_fit)^2)) #rmse(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
+  #model_stats$MAE <- mae(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
+  model_stats$BIAS <- mean(site_data_temp$val.pm25_p.y - site_data_temp$pm25_fit) #bias(site_data_temp$val.pm25_p.y, site_data_temp$pm25_fit)
   
 
   #output a row that can be added to a table to combine all together###
