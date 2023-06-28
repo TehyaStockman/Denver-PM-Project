@@ -17,9 +17,9 @@ updateR()
 
 #save alg list of coefficients
 
-write.csv(all_corr_alg_models, 'algorithm_stats.csv')
+write.csv(all_corr_alg_models, 'algorithm_stats_780.csv')
 
-all_correction_stats <- read.csv('algorithm_stats.csv')
+all_correction_stats <- read.csv('algorithm_stats_780.csv')
 #remove .csv
 
 ##-----------------------------------------
@@ -97,55 +97,83 @@ library(ggpmisc)
 sams_data <- read.csv(paste(new_alg_data_dir, 'Swansea GRIMM.csv', sep = '/'))
 sams_data$date <- as.POSIXct(sams_data$date, tz = 'MST')
 
+sams_long <- subset(sams_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
+sams_long <- melt(sams_long, id = 'date')
+
+new_sams <- sams_data[sams_data$flag == 0,]
+
 timePlot(sams_data, pollutant = c('val.pm25_p.y', 'val.pm25_r'))
 
-ggplot(sams_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  stat_poly_line() +
-  stat_poly_eq() +
-  geom_point() +
-  theme_bw()
+ggplot(new_sams, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = val.humidity)) +
+  theme_bw()+
+  xlab(bquote('SAMS Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('SAMS Sensor PM2.5' ~µg/m^3))
+ggsave('Figures/sams_scatter.png')
 
-ggplot(sams_data, aes(x=date, y=val.pm25_r)) +
-  geom_line(color = '#ABD9E9') +
-  geom_line(aes(x = date, y= val.pm25_p.y), color = '#F46D43') +
+
+ggplot(sams_long, aes(x=date, y=value)) +
+  geom_line(aes(color = variable)) +
+  scale_color_brewer(palette = 'Dark2')+
+  ylab(bquote('SAMS PM2.5' ~µg/m^3))+
   theme_bw()
+ggsave('Figures/sams_timeseries.png')
 
 ##I-25 Denver
 i25Den_data <- read.csv(paste(new_alg_data_dir, 'I-25 Denver State Site.csv', sep = '/'))
 i25Den_data$date <- as.POSIXct(i25Den_data$date, tz = 'MST')
 
-ggplot(i25Den_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  stat_poly_line() +
-  stat_poly_eq() +
-  geom_point() +
-  theme_bw()
+i25Den_long <- subset(i25Den_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
+i25Den_long <- melt(i25Den_long, id = 'date')
 
-ggplot(i25Den_data, aes(x=date, y=val.pm25_r)) +
-  geom_line(color = '#ABD9E9') +
-  geom_line(aes(x = date, y= val.pm25_p.y), color = '#F46D43') +
-  theme_bw()
+new_den <- i25Den_data[i25Den_data$flag == 0,]
 
-ggplot(i25Den_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  geom_point() +
+ggplot(new_den, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = Ratio)) +
+  theme_bw()+
+  xlab(bquote('I-25 Denver Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('I-25 Denver Sensor PM2.5' ~µg/m^3))
+ggsave('Figures/i25den_scatter.png')
+
+ggplot(i25Den_long, aes(x=date, y=value)) +
+  geom_line(aes(color = variable)) +
+  scale_color_brewer(palette = 'Dark2')+
+  ylab(bquote('I-25 Denver PM2.5' ~µg/m^3))+
   theme_bw()
+ggsave('Figures/i25den_timeseries.png')
+
 
 ##CAMP
 camp_data <- read.csv(paste(new_alg_data_dir, 'CAMP State Site.csv', sep = '/'))
 camp_data$date <- as.POSIXct(camp_data$date, tz = 'MST')
 
-ggplot(camp_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  stat_poly_line() +
-  stat_poly_eq() +
-  geom_point() +
+new_camp <- camp_data[camp_data$date >= '2020-01-01 00:00:00',]
+new_camp <- camp_data[camp_data$Ratio >= 0.8 & camp_data$date >= '2020-01-01 00:00:00',]
+
+camp_long <- subset(camp_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
+camp_long <- melt(camp_long, id = 'date')
+
+ggplot(new_camp, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = Ratio)) +
+  theme_bw()+
+  xlab(bquote('CAMP Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('CAMP Sensor PM2.5' ~µg/m^3))
+ggsave('Figures/camp_scatter.png')
+
+ggplot(camp_long, aes(x=date, y=value)) +
+  geom_line(aes(color = variable)) +
+  scale_color_brewer(palette = 'Dark2')+
+  ylab(bquote('CAMP PM2.5' ~µg/m^3))+
   theme_bw()
-
-ggplot(camp_data, aes(x=date, y=val.pm25_r)) +
-  geom_line(color = '#ABD9E9') +
-  geom_line(aes(x = date, y= val.pm25_p.y), color = '#F46D43') +
-  theme_minimal()
+ggsave('Figures/camp_timeseries.png')
 
 
-#I25 Globeville
 
 i25Glo_data <- read.csv(paste(new_alg_data_dir, 'I-25 Globeville State Site.csv', sep = '/'))
 i25Glo_data$date <- as.POSIXct(i25Glo_data$date, tz = 'MST', tryFormats = c("%Y-%m-%d %H:%M:%OS",
@@ -154,34 +182,53 @@ i25Glo_data$date <- as.POSIXct(i25Glo_data$date, tz = 'MST', tryFormats = c("%Y-
                                                                             "%Y/%m/%d %H:%M",
                                                                             "%Y-%m-%d",
                                                                             "%Y/%m/%d"))
+new_glo <-  i25Glo_data[i25Glo_data$flag == 0,] 
 
-ggplot(i25Glo_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  stat_poly_line() +
-  stat_poly_eq() +
-  geom_point() +
-  theme_bw()
+i25Glo_long <- subset(i25Glo_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
+i25Glo_long <- melt(i25Glo_long, id = 'date')
 
-ggplot(i25Glo_data, aes(x=date, y=val.pm25_r)) +
-  geom_line(color = '#ABD9E9') +
-  geom_line(aes(x = date, y= val.pm25_p.y), color = '#F46D43') +
+ggplot(new_glo, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = val.humidity)) +
+  theme_bw()+
+  xlab(bquote('I-25 Globeville Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('I-25 Globeville Sensor PM2.5' ~µg/m^3))
+ggsave('Figures/i25Glo_scatter.png')
+
+ggplot(i25Glo_long, aes(x=date, y=value)) +
+  geom_line(aes(color = variable)) +
+  scale_color_brewer(palette = 'Dark2')+
+  ylab(bquote('I-25 Globeville PM2.5' ~µg/m^3))+
   theme_bw()
+ggsave('Figures/i25glo_timeseries.png')
 
 i25Glo_stats <- aqStats(i25Glo_data, pollutant = 'val.pm25_p.y')
 
 #La Casa
-i25Casa_data <- read.csv(paste(new_alg_data_dir, 'La Casa State Site.csv', sep = '/'))
-i25Casa_data$date <- as.POSIXct(i25Casa_data$date, tz = 'MST')
+LaCasa_data <- read.csv(paste(new_alg_data_dir, 'La Casa State Site.csv', sep = '/'))
+LaCasa_data$date <- as.POSIXct(LaCasa_data$date, tz = 'MST')
 
-ggplot(i25Casa_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  stat_poly_line() +
-  stat_poly_eq() +
-  geom_point() +
-  theme_bw()
+LaCasa_long <- subset(LaCasa_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
+LaCasa_long <- melt(LaCasa_long, id = 'date')
 
-ggplot(i25Casa_data, aes(x=date, y=val.pm25_r)) +
-  geom_line(color = '#ABD9E9') +
-  geom_line(aes(x = date, y= val.pm25_p.y), color = '#F46D43') +
+new_casa <- LaCasa_data[LaCasa_data$flag == 0, ]
+
+ggplot(new_casa, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = Ratio)) +
+  theme_bw()+
+  xlab(bquote('La Casa Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('La Casa Sensor PM2.5' ~µg/m^3))
+ggsave('Figures/Lacasa_scatter.png')
+
+ggplot(LaCasa_long, aes(x=date, y=value)) +
+  geom_line(aes(color = variable)) +
+  scale_color_brewer(palette = 'Dark2')+
+  ylab(bquote('La Casa PM2.5' ~µg/m^3))+
   theme_bw()
+ggsave('Figures/Lacasa_timeseries.png')
 
 ggplot(i25Casa_data, aes(x=date, y=Ratio)) +
   geom_line(color = '#ABD9E9') +
@@ -193,16 +240,26 @@ Lacasa_stats <- aqStats(i25Casa_data, pollutant = 'val.pm25_p.y')
 NJH_data <- read.csv(paste(new_alg_data_dir, 'National Jewish Health State Site.csv', sep = '/'))
 NJH_data$date <- as.POSIXct(NJH_data$date, tz = 'MST')
 
-ggplot(NJH_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
-  stat_poly_line() +
-  stat_poly_eq() +
-  geom_point() +
-  theme_bw()
+new_njh <- NJH_data[NJH_data$flag ==0,]
 
-ggplot(NJH_data, aes(x=date, y=val.pm25_r)) +
-  geom_line(color = '#ABD9E9') +
-  geom_line(aes(x = date, y= val.pm25_p.y), color = '#F46D43') +
+NJH_long <- subset(NJH_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
+NJH_long <- melt(NJH_long, id = 'date')
+
+ggplot(new_njh, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = Ratio)) +
+  theme_bw()+
+  xlab(bquote('National Jewish Health Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('National Jewish Health Sensor PM2.5' ~µg/m^3))
+ggsave('Figures/NJH_scatter.png')
+
+ggplot(NJH_long, aes(x=date, y=value)) +
+  geom_line(aes(color = variable)) +
+  scale_color_brewer(palette = 'Dark2')+
+  ylab(bquote('National Jewish Health PM2.5' ~µg/m^3))+
   theme_bw()
+ggsave('Figures/NJH_timeseries.png')
 
 ggplot(NJH_data, aes(x=date, y=Ratio)) +
   geom_line(color = '#ABD9E9') +

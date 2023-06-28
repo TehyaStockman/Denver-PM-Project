@@ -443,6 +443,26 @@ ggplot(site_data, aes(x=val.pm25_p.y, y=val.pm25_p.x)) + geom_point() +  geom_sm
 
 #make if statements to point to different functions
 
+##--------
+##Make figure of La Casa Data
 
 
 
+
+sams_data <- read.csv(paste(new_alg_data_dir, 'La Casa State Site.csv', sep ='/'))
+corr_alg_name <- 'National Jewish Health State Site rft pm10_all.rds'
+corr_alg <- readRDS(paste(corr_alg_dir, corr_alg_name, sep = '/'))
+  
+coef(corr_alg$finalModel)
+
+sams_data$pm25_fit<-predict(corr_alg, sams_data)
+
+
+ggplot(sams_data, aes(x=val.pm25_p.y, y=pm25_fit)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point(aes(color = flag)) +
+  theme_bw()+
+  xlab(bquote('La Casa Reference PM2.5' ~µg/m^3))+
+  ylab(bquote('La Casa PM2.5 Predicted' ~µg/m^3))
+ggsave('Figures/sams_scatter.png')
