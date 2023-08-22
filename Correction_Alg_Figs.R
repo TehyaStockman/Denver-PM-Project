@@ -19,7 +19,7 @@ updateR()
 
 write.csv(all_corr_alg_models, 'algorithm_stats_780.csv')
 
-all_correction_stats <- read.csv('algorithm_stats_780.csv')
+all_correction_stats <- read.csv('algorithm_stats_updated2.csv')
 #remove .csv
 
 ##-----------------------------------------
@@ -43,6 +43,20 @@ ggplot(all_corr_alg_models, aes(x =EVAL_SITE, y =BIAS)) +
   geom_boxplot() +
   theme_bw()
 
+##Evaluating sensors with corrections
+ggplot(all_corr_alg_models, aes(x =EVAL_SITE, y =AVG)) + 
+  geom_boxplot() +
+  theme_bw()
+
+rft_models_sensors <- read.csv("algorithm_stats_sensors_rft.csv")
+ggplot(rft_models_sensors, aes(x =EVAL_SITE, y =AVG)) + 
+  geom_boxplot() +
+  theme_bw()
+
+ggplot(rft_models_sensors, aes(x =EVAL_SITE, y =STDEV)) + 
+  geom_boxplot() +
+  theme_bw()
+  
 #Based on correction algorithm created site
 #Need to remove and separate after lm/rft
 ggplot(all_corr_alg_models, aes(x =CORR_SITE, y =COR)) + 
@@ -100,14 +114,17 @@ sams_data$date <- as.POSIXct(sams_data$date, tz = 'MST')
 sams_long <- subset(sams_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
 sams_long <- melt(sams_long, id = 'date')
 
-new_sams <- sams_data[sams_data$flag == 0,]
+new_sams <- sams_data[sams_data$Ratio <= 0.2,]
+sqrt(mean((sams_data$val.pm25_p.y - sams_data$val.pm25_r)^2))
 
+sams_data$bias <- sams_data$val.pm25_p.y - sams_data$val.pm25_r
 timePlot(sams_data, pollutant = c('val.pm25_p.y', 'val.pm25_r'))
+cor(sams_data$val.pm25_p.y, sams_data$val.pm25_r)
 
 ggplot(new_sams, aes(x=val.pm25_p.y, y=val.pm25_r)) +
   stat_poly_line(color = '#1B9E77') +
   stat_poly_eq(use_label(c('eq', 'R2'))) +
-  geom_point(aes(color = val.humidity)) +
+  geom_point(aes(color = Ratio)) +
   theme_bw()+
   xlab(bquote('SAMS Reference PM2.5' ~µg/m^3))+
   ylab(bquote('SAMS Sensor PM2.5' ~µg/m^3))
@@ -123,6 +140,7 @@ ggsave('Figures/sams_timeseries.png')
 
 ##I-25 Denver
 i25Den_data <- read.csv(paste(new_alg_data_dir, 'I-25 Denver State Site.csv', sep = '/'))
+i25Den_data2 <- filter(i25Den_data, flag == 1)
 i25Den_data$date <- as.POSIXct(i25Den_data$date, tz = 'MST')
 
 i25Den_long <- subset(i25Den_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
@@ -130,10 +148,14 @@ i25Den_long <- melt(i25Den_long, id = 'date')
 
 new_den <- i25Den_data[i25Den_data$flag == 0,]
 
-ggplot(new_den, aes(x=val.pm25_p.y, y=val.pm25_r)) +
+i25Den_data$bias <- i25Den_data$val.pm25_r - i25Den_data$val.pm25_p.y
+mean(i25Den_data$bias)
+sqrt(mean((i25Den_data$val.pm25_r - i25Den_data$val.pm25_p.y)^2))
+
+ggplot(i25Den_data, aes(x=val.pm25_p.y, y=val.pm25_r)) +
   stat_poly_line(color = '#1B9E77') +
   stat_poly_eq(use_label(c('eq', 'R2'))) +
-  geom_point(aes(color = Ratio)) +
+  geom_point(aes(color = age_weeks.x)) +
   theme_bw()+
   xlab(bquote('I-25 Denver Reference PM2.5' ~µg/m^3))+
   ylab(bquote('I-25 Denver Sensor PM2.5' ~µg/m^3))
@@ -149,10 +171,16 @@ ggsave('Figures/i25den_timeseries.png')
 
 ##CAMP
 camp_data <- read.csv(paste(new_alg_data_dir, 'CAMP State Site.csv', sep = '/'))
+camp_data <- filter(camp_data, flag == 1)
 camp_data$date <- as.POSIXct(camp_data$date, tz = 'MST')
+camp_data$bias <- camp_data$val.pm25_r -camp_data$val.pm25_p.y
+mean(camp_data$bias)
 
-new_camp <- camp_data[camp_data$date >= '2020-01-01 00:00:00',]
+new_camp <- camp_data[camp_data$date <= '2020-01-01 00:00:00',]
 new_camp <- camp_data[camp_data$Ratio >= 0.8 & camp_data$date >= '2020-01-01 00:00:00',]
+sqrt(mean((new_camp$val.pm25_p.y - new_camp$val.pm25_r)^2))
+cor(camp_data$val.pm25_p.y,camp_data$val.pm25_r)
+sqrt(mean((camp_data$val.pm25_p.y - camp_data$val.pm25_r)^2))
 
 camp_long <- subset(camp_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
 camp_long <- melt(camp_long, id = 'date')
@@ -173,7 +201,9 @@ ggplot(camp_long, aes(x=date, y=value)) +
   theme_bw()
 ggsave('Figures/camp_timeseries.png')
 
-
+ggplot(camp_data, aes(x = date, y = bias)) +
+  geom_line()+
+  theme_bw()
 
 i25Glo_data <- read.csv(paste(new_alg_data_dir, 'I-25 Globeville State Site.csv', sep = '/'))
 i25Glo_data$date <- as.POSIXct(i25Glo_data$date, tz = 'MST', tryFormats = c("%Y-%m-%d %H:%M:%OS",
@@ -182,7 +212,9 @@ i25Glo_data$date <- as.POSIXct(i25Glo_data$date, tz = 'MST', tryFormats = c("%Y-
                                                                             "%Y/%m/%d %H:%M",
                                                                             "%Y-%m-%d",
                                                                             "%Y/%m/%d"))
-new_glo <-  i25Glo_data[i25Glo_data$flag == 0,] 
+i25Glo_data$bias <- i25Glo_data$val.pm25_r -i25Glo_data$val.pm25_p.y
+new_glo <-  i25Glo_data[i25Glo_data$flag == 1,] 
+sqrt(mean((i25Glo_data$val.pm25_p.y - i25Glo_data$val.pm25_r)^2))
 
 i25Glo_long <- subset(i25Glo_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
 i25Glo_long <- melt(i25Glo_long, id = 'date')
@@ -190,7 +222,7 @@ i25Glo_long <- melt(i25Glo_long, id = 'date')
 ggplot(new_glo, aes(x=val.pm25_p.y, y=val.pm25_r)) +
   stat_poly_line(color = '#1B9E77') +
   stat_poly_eq(use_label(c('eq', 'R2'))) +
-  geom_point(aes(color = val.humidity)) +
+  geom_point(aes(color = age_weeks.x)) +
   theme_bw()+
   xlab(bquote('I-25 Globeville Reference PM2.5' ~µg/m^3))+
   ylab(bquote('I-25 Globeville Sensor PM2.5' ~µg/m^3))
@@ -205,6 +237,10 @@ ggsave('Figures/i25glo_timeseries.png')
 
 i25Glo_stats <- aqStats(i25Glo_data, pollutant = 'val.pm25_p.y')
 
+ggplot(i25Glo_data, aes(x = date, y = bias)) +
+  geom_line()+
+  theme_bw()
+
 #La Casa
 LaCasa_data <- read.csv(paste(new_alg_data_dir, 'La Casa State Site.csv', sep = '/'))
 LaCasa_data$date <- as.POSIXct(LaCasa_data$date, tz = 'MST')
@@ -212,8 +248,11 @@ LaCasa_data$date <- as.POSIXct(LaCasa_data$date, tz = 'MST')
 LaCasa_long <- subset(LaCasa_data, select = c('date', 'val.pm25_p.y', 'val.pm25_r'))
 LaCasa_long <- melt(LaCasa_long, id = 'date')
 
-new_casa <- LaCasa_data[LaCasa_data$flag == 0, ]
+new_casa <- LaCasa_data[LaCasa_data$Ratio <= 0.2 &LaCasa_data$Ratio > 0, ]
 
+sqrt(mean((LaCasa_data$val.pm25_p.y - LaCasa_data$val.pm25_r)^2))
+LaCasa_data$bias <- LaCasa_data$val.pm25_p.y - LaCasa_data$val.pm25_r 
+  
 ggplot(new_casa, aes(x=val.pm25_p.y, y=val.pm25_r)) +
   stat_poly_line(color = '#1B9E77') +
   stat_poly_eq(use_label(c('eq', 'R2'))) +
@@ -239,6 +278,8 @@ Lacasa_stats <- aqStats(i25Casa_data, pollutant = 'val.pm25_p.y')
 #NJH
 NJH_data <- read.csv(paste(new_alg_data_dir, 'National Jewish Health State Site.csv', sep = '/'))
 NJH_data$date <- as.POSIXct(NJH_data$date, tz = 'MST')
+NJH_data$bias <- NJH_data$val.pm25_p.y - NJH_data$val.pm25_r 
+sqrt(mean((NJH_data$val.pm25_p.y - NJH_data$val.pm25_r)^2))
 
 new_njh <- NJH_data[NJH_data$flag ==0,]
 
@@ -248,7 +289,7 @@ NJH_long <- melt(NJH_long, id = 'date')
 ggplot(new_njh, aes(x=val.pm25_p.y, y=val.pm25_r)) +
   stat_poly_line(color = '#1B9E77') +
   stat_poly_eq(use_label(c('eq', 'R2'))) +
-  geom_point(aes(color = Ratio)) +
+  geom_point(aes(color = age_weeks.x)) +
   theme_bw()+
   xlab(bquote('National Jewish Health Reference PM2.5' ~µg/m^3))+
   ylab(bquote('National Jewish Health Sensor PM2.5' ~µg/m^3))

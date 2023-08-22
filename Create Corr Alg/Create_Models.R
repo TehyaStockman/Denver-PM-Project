@@ -20,6 +20,10 @@ library(foreach)
 library(doParallel)
 library(tools)
 
+# sams_data_fix <- read.csv("Data_for_Alg/Swansea GRIMM.csv")
+# sams_data_fized <- sams_data_fix[sams_data_fix$date <= '2019-08-01 00:00:00' | sams_data_fix$date >= '2020-02-01 00:00:00',]
+# 
+# write.csv(sams_data_fized, "Data_for_Alg/Swansea GRIMM.csv")
 
 #Algorithms include:
 #Random Forest Tree
@@ -149,7 +153,7 @@ var_dict <- list('all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age
     'pm10' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'Ratio'),
     "pm10_all" = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'flag', 'Ratio'))
 
-var_dict <- list('pm10_all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'flag', 'Ratio'))
+#var_dict <- list('pm10_all' = c('val.pm25_r', 'val.humidity', 'val.temperature', 'age_weeks.x', 'flag', 'Ratio'))
 var_list <- list('pm10_all')
 
 var_list <- list('all', 'age', 'smoke', 'met', 'pm_raw', 'pm10', "pm10_all")
@@ -192,7 +196,7 @@ source(paste(create_corr_alg_dir, 'ml_models.R', sep = '/'))
 
 
 #try with less data
-aq_models_short <- aq_models[1:18] #21
+aq_models_short <- aq_models[1:21] #21
 model_names <- c()
 
 all_model_data <- foreach(model_index = aq_models_short) %dopar%{
@@ -311,7 +315,7 @@ for(alg_model_index in aq_corr_alg_models){
   alg_stats_of_site <- rbind(alg_stats_of_site, alg_stats)
 }
 
-write.csv(alg_stats_of_site, 'algorithm_stats_updated.csv')
+write.csv(all_corr_alg_models, 'algorithm_stats_sensors_lm_all.csv')
 
 #Test Evaluation of Model
 'wide_SAMS MET.csv'
@@ -450,7 +454,7 @@ ggplot(site_data, aes(x=val.pm25_p.y, y=val.pm25_p.x)) + geom_point() +  geom_sm
 
 
 sams_data <- read.csv(paste(new_alg_data_dir, 'La Casa State Site.csv', sep ='/'))
-corr_alg_name <- 'National Jewish Health State Site rft pm10_all.rds'
+corr_alg_name <- 'National Jewish Health State Site lm age.rds'
 corr_alg <- readRDS(paste(corr_alg_dir, corr_alg_name, sep = '/'))
   
 coef(corr_alg$finalModel)

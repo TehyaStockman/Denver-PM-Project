@@ -1,0 +1,397 @@
+,model_name,EVAL_SITE,CORR_SITE,Correction_Applied,COR,RMSE,BIAS
+1,I-25 Denver State Site CAMP State Site lm age,I-25 Denver State Site.csv,CAMP State Site lm age,Yes,0.798724901,5.497045975,-3.774739324
+2,I-25 Globeville State Site CAMP State Site lm age,I-25 Globeville State Site.csv,CAMP State Site lm age,Yes,0.828503056,4.616361044,-0.360768808
+3,La Casa State Site CAMP State Site lm age,La Casa State Site.csv,CAMP State Site lm age,Yes,0.902525253,3.405516519,-1.311057671
+4,National Jewish Health State Site CAMP State Site lm age,National Jewish Health State Site.csv,CAMP State Site lm age,Yes,0.909654116,3.351592717,-1.656483273
+5,Swansea GRIMM CAMP State Site lm age,Swansea GRIMM.csv,CAMP State Site lm age,Yes,0.775916637,4.822037269,-0.999490324
+6,I-25 Denver State Site CAMP State Site lm all,I-25 Denver State Site.csv,CAMP State Site lm all,Yes,0.800746702,5.445091938,-3.722306869
+7,I-25 Globeville State Site CAMP State Site lm all,I-25 Globeville State Site.csv,CAMP State Site lm all,Yes,0.827212481,4.630329933,-0.303813075
+8,La Casa State Site CAMP State Site lm all,La Casa State Site.csv,CAMP State Site lm all,Yes,0.90833568,3.30969645,-1.27815488
+9,National Jewish Health State Site CAMP State Site lm all,National Jewish Health State Site.csv,CAMP State Site lm all,Yes,0.913570896,3.290723544,-1.621338283
+10,Swansea GRIMM CAMP State Site lm all,Swansea GRIMM.csv,CAMP State Site lm all,Yes,0.778420412,4.791832005,-0.958641407
+11,I-25 Denver State Site CAMP State Site lm met,I-25 Denver State Site.csv,CAMP State Site lm met,Yes,0.807657312,5.004122247,-3.132776753
+12,I-25 Globeville State Site CAMP State Site lm met,I-25 Globeville State Site.csv,CAMP State Site lm met,Yes,0.822251244,4.69221093,0.173027957
+13,La Casa State Site CAMP State Site lm met,La Casa State Site.csv,CAMP State Site lm met,Yes,0.914994905,3.091698307,-0.87481904
+14,National Jewish Health State Site CAMP State Site lm met,National Jewish Health State Site.csv,CAMP State Site lm met,Yes,0.923644119,3.048282331,-1.307502446
+15,Swansea GRIMM CAMP State Site lm met,Swansea GRIMM.csv,CAMP State Site lm met,Yes,0.803948782,4.587012614,-1.02175453
+16,I-25 Denver State Site CAMP State Site lm pm_raw,I-25 Denver State Site.csv,CAMP State Site lm pm_raw,Yes,0.807309081,4.392113227,-1.990521114
+17,I-25 Globeville State Site CAMP State Site lm pm_raw,I-25 Globeville State Site.csv,CAMP State Site lm pm_raw,Yes,0.835577819,4.656886159,-0.621397282
+18,La Casa State Site CAMP State Site lm pm_raw,La Casa State Site.csv,CAMP State Site lm pm_raw,Yes,0.920725309,3.509397951,-1.84004315
+19,National Jewish Health State Site CAMP State Site lm pm_raw,National Jewish Health State Site.csv,CAMP State Site lm pm_raw,Yes,0.922491018,3.237322241,-1.489264113
+20,Swansea GRIMM CAMP State Site lm pm_raw,Swansea GRIMM.csv,CAMP State Site lm pm_raw,Yes,0.804958777,4.650582311,-1.101755022
+21,I-25 Denver State Site CAMP State Site lm pm10_all,I-25 Denver State Site.csv,CAMP State Site lm pm10_all,Yes,0.794905342,5.235118263,-3.333756146
+22,I-25 Globeville State Site CAMP State Site lm pm10_all,I-25 Globeville State Site.csv,CAMP State Site lm pm10_all,Yes,0.819856134,4.713894386,0.298138731
+23,La Casa State Site CAMP State Site lm pm10_all,La Casa State Site.csv,CAMP State Site lm pm10_all,Yes,0.90149909,3.212787687,-0.586233224
+24,National Jewish Health State Site CAMP State Site lm pm10_all,National Jewish Health State Site.csv,CAMP State Site lm pm10_all,Yes,0.908709149,3.102516367,-1.033583213
+25,Swansea GRIMM CAMP State Site lm pm10_all,Swansea GRIMM.csv,CAMP State Site lm pm10_all,Yes,0.754469274,4.960637766,-0.69498665
+26,I-25 Denver State Site CAMP State Site lm pm10,I-25 Denver State Site.csv,CAMP State Site lm pm10,Yes,0.800549059,4.866237163,-2.810895834
+27,I-25 Globeville State Site CAMP State Site lm pm10,I-25 Globeville State Site.csv,CAMP State Site lm pm10,Yes,0.81552109,4.819999424,0.758696794
+28,La Casa State Site CAMP State Site lm pm10,La Casa State Site.csv,CAMP State Site lm pm10,Yes,0.90454609,3.120425538,-0.170764871
+29,National Jewish Health State Site CAMP State Site lm pm10,National Jewish Health State Site.csv,CAMP State Site lm pm10,Yes,0.915824831,2.930013992,-0.710633177
+30,Swansea GRIMM CAMP State Site lm pm10,Swansea GRIMM.csv,CAMP State Site lm pm10,Yes,0.777885413,4.757924714,-0.727542799
+31,I-25 Denver State Site CAMP State Site lm smoke,I-25 Denver State Site.csv,CAMP State Site lm smoke,Yes,0.809351002,4.960436699,-3.082469785
+32,I-25 Globeville State Site CAMP State Site lm smoke,I-25 Globeville State Site.csv,CAMP State Site lm smoke,Yes,0.819799391,4.725856334,0.228548721
+33,La Casa State Site CAMP State Site lm smoke,La Casa State Site.csv,CAMP State Site lm smoke,Yes,0.920175283,3.01027459,-0.843428461
+34,National Jewish Health State Site CAMP State Site lm smoke,National Jewish Health State Site.csv,CAMP State Site lm smoke,Yes,0.926999425,2.999765887,-1.273347629
+35,Swansea GRIMM CAMP State Site lm smoke,Swansea GRIMM.csv,CAMP State Site lm smoke,Yes,0.806386002,4.561605993,-0.979770177
+36,I-25 Denver State Site CAMP State Site rft age,I-25 Denver State Site.csv,CAMP State Site rft age,Yes,0.732055154,5.030081569,-1.969982428
+37,I-25 Globeville State Site CAMP State Site rft age,I-25 Globeville State Site.csv,CAMP State Site rft age,Yes,0.771065375,5.227127304,-0.04450039
+38,La Casa State Site CAMP State Site rft age,La Casa State Site.csv,CAMP State Site rft age,Yes,0.868490093,3.771817498,-1.061906898
+39,National Jewish Health State Site CAMP State Site rft age,National Jewish Health State Site.csv,CAMP State Site rft age,Yes,0.860345204,3.655922945,-0.840772919
+40,Swansea GRIMM CAMP State Site rft age,Swansea GRIMM.csv,CAMP State Site rft age,Yes,0.687118578,5.563842956,-0.952646714
+41,I-25 Denver State Site CAMP State Site rft all,I-25 Denver State Site.csv,CAMP State Site rft all,Yes,0.725063255,5.27844685,-2.21665644
+42,I-25 Globeville State Site CAMP State Site rft all,I-25 Globeville State Site.csv,CAMP State Site rft all,Yes,0.77564962,5.197351087,-0.208112722
+43,La Casa State Site CAMP State Site rft all,La Casa State Site.csv,CAMP State Site rft all,Yes,0.860071212,3.937642834,-1.201580111
+44,National Jewish Health State Site CAMP State Site rft all,National Jewish Health State Site.csv,CAMP State Site rft all,Yes,0.854357135,3.787205568,-0.972959322
+45,Swansea GRIMM CAMP State Site rft all,Swansea GRIMM.csv,CAMP State Site rft all,Yes,0.711059274,5.482040763,-1.225182798
+46,I-25 Denver State Site CAMP State Site rft met,I-25 Denver State Site.csv,CAMP State Site rft met,Yes,0.731198655,5.073077641,-2.150977151
+47,I-25 Globeville State Site CAMP State Site rft met,I-25 Globeville State Site.csv,CAMP State Site rft met,Yes,0.828358916,4.602090181,0.053066086
+48,La Casa State Site CAMP State Site rft met,La Casa State Site.csv,CAMP State Site rft met,Yes,0.917369406,3.015768314,-0.787406298
+49,National Jewish Health State Site CAMP State Site rft met,National Jewish Health State Site.csv,CAMP State Site rft met,Yes,0.888083546,3.338416615,-0.907172509
+50,Swansea GRIMM CAMP State Site rft met,Swansea GRIMM.csv,CAMP State Site rft met,Yes,0.778661708,4.742349828,-0.658410815
+51,I-25 Denver State Site CAMP State Site rft pm10_all,I-25 Denver State Site.csv,CAMP State Site rft pm10_all,Yes,0.727168652,5.341846564,-2.32890384
+52,I-25 Globeville State Site CAMP State Site rft pm10_all,I-25 Globeville State Site.csv,CAMP State Site rft pm10_all,Yes,0.780788123,5.187360309,-0.551062092
+53,La Casa State Site CAMP State Site rft pm10_all,La Casa State Site.csv,CAMP State Site rft pm10_all,Yes,0.865372225,4.076601038,-1.640500594
+54,National Jewish Health State Site CAMP State Site rft pm10_all,National Jewish Health State Site.csv,CAMP State Site rft pm10_all,Yes,0.863821961,3.801681528,-1.277222792
+55,Swansea GRIMM CAMP State Site rft pm10_all,Swansea GRIMM.csv,CAMP State Site rft pm10_all,Yes,0.703622295,5.561957614,-1.311741088
+56,I-25 Denver State Site CAMP State Site rft pm10,I-25 Denver State Site.csv,CAMP State Site rft pm10,Yes,0.756613149,4.873444746,-2.024465089
+57,I-25 Globeville State Site CAMP State Site rft pm10,I-25 Globeville State Site.csv,CAMP State Site rft pm10,Yes,0.823453054,4.679716997,-0.271675748
+58,La Casa State Site CAMP State Site rft pm10,La Casa State Site.csv,CAMP State Site rft pm10,Yes,0.914797431,3.19501058,-1.154789594
+59,National Jewish Health State Site CAMP State Site rft pm10,National Jewish Health State Site.csv,CAMP State Site rft pm10,Yes,0.899737457,3.244010114,-1.049804146
+60,Swansea GRIMM CAMP State Site rft pm10,Swansea GRIMM.csv,CAMP State Site rft pm10,Yes,0.776238948,4.758462714,-0.598565912
+61,I-25 Denver State Site CAMP State Site rft smoke,I-25 Denver State Site.csv,CAMP State Site rft smoke,Yes,0.716762279,5.142299069,-1.97751431
+62,I-25 Globeville State Site CAMP State Site rft smoke,I-25 Globeville State Site.csv,CAMP State Site rft smoke,Yes,0.821598428,4.686097812,0.089541876
+63,La Casa State Site CAMP State Site rft smoke,La Casa State Site.csv,CAMP State Site rft smoke,Yes,0.916520856,3.018038028,-0.739706411
+64,National Jewish Health State Site CAMP State Site rft smoke,National Jewish Health State Site.csv,CAMP State Site rft smoke,Yes,0.879307956,3.440546314,-0.831026416
+65,Swansea GRIMM CAMP State Site rft smoke,Swansea GRIMM.csv,CAMP State Site rft smoke,Yes,0.777593966,4.745291877,-0.561909896
+66,CAMP State Site I-25 Denver State Site lm age,CAMP State Site.csv,I-25 Denver State Site lm age,Yes,0.685632933,5.67657054,2.244116991
+67,I-25 Globeville State Site I-25 Denver State Site lm age,I-25 Globeville State Site.csv,I-25 Denver State Site lm age,Yes,0.833038798,5.039299576,2.088933194
+68,La Casa State Site I-25 Denver State Site lm age,La Casa State Site.csv,I-25 Denver State Site lm age,Yes,0.929171464,2.915156691,0.87488106
+69,National Jewish Health State Site I-25 Denver State Site lm age,National Jewish Health State Site.csv,I-25 Denver State Site lm age,Yes,0.931609277,2.800084098,0.873464023
+70,Swansea GRIMM I-25 Denver State Site lm age,Swansea GRIMM.csv,I-25 Denver State Site lm age,Yes,0.820498421,4.443311021,0.994702118
+71,CAMP State Site I-25 Denver State Site lm all,CAMP State Site.csv,I-25 Denver State Site lm all,Yes,0.687943136,5.649857301,2.205363067
+72,I-25 Globeville State Site I-25 Denver State Site lm all,I-25 Globeville State Site.csv,I-25 Denver State Site lm all,Yes,0.830963753,5.051756724,2.072541897
+73,La Casa State Site I-25 Denver State Site lm all,La Casa State Site.csv,I-25 Denver State Site lm all,Yes,0.934984076,2.808784894,0.838479321
+74,National Jewish Health State Site I-25 Denver State Site lm all,National Jewish Health State Site.csv,I-25 Denver State Site lm all,Yes,0.935065242,2.740461104,0.854666135
+75,Swansea GRIMM I-25 Denver State Site lm all,Swansea GRIMM.csv,I-25 Denver State Site lm all,Yes,0.822820787,4.420534141,0.990475294
+76,CAMP State Site I-25 Denver State Site lm met,CAMP State Site.csv,I-25 Denver State Site lm met,Yes,0.705254878,5.734871169,2.675442368
+77,I-25 Globeville State Site I-25 Denver State Site lm met,I-25 Globeville State Site.csv,I-25 Denver State Site lm met,Yes,0.837022009,5.145444216,2.414051646
+78,La Casa State Site I-25 Denver State Site lm met,La Casa State Site.csv,I-25 Denver State Site lm met,Yes,0.927206392,3.085078845,1.277644909
+79,National Jewish Health State Site I-25 Denver State Site lm met,National Jewish Health State Site.csv,I-25 Denver State Site lm met,Yes,0.931258277,2.934585237,1.207287107
+80,Swansea GRIMM I-25 Denver State Site lm met,Swansea GRIMM.csv,I-25 Denver State Site lm met,Yes,0.813114398,4.664355944,1.534156878
+81,CAMP State Site I-25 Denver State Site lm pm_raw,CAMP State Site.csv,I-25 Denver State Site lm pm_raw,Yes,0.68068056,5.641342364,2.076754376
+82,I-25 Globeville State Site I-25 Denver State Site lm pm_raw,I-25 Globeville State Site.csv,I-25 Denver State Site lm pm_raw,Yes,0.835577819,4.752700179,1.322062784
+83,La Casa State Site I-25 Denver State Site lm pm_raw,La Casa State Site.csv,I-25 Denver State Site lm pm_raw,Yes,0.920725309,2.920859411,0.125201762
+84,National Jewish Health State Site I-25 Denver State Site lm pm_raw,National Jewish Health State Site.csv,I-25 Denver State Site lm pm_raw,Yes,0.922491018,2.841906851,0.508288374
+85,Swansea GRIMM I-25 Denver State Site lm pm_raw,Swansea GRIMM.csv,I-25 Denver State Site lm pm_raw,Yes,0.804958777,4.566787517,0.889919601
+86,CAMP State Site I-25 Denver State Site lm pm10_all,CAMP State Site.csv,I-25 Denver State Site lm pm10_all,Yes,0.67853963,5.775107218,2.352046961
+87,I-25 Globeville State Site I-25 Denver State Site lm pm10_all,I-25 Globeville State Site.csv,I-25 Denver State Site lm pm10_all,Yes,0.834217896,4.947655889,1.915850257
+88,La Casa State Site I-25 Denver State Site lm pm10_all,La Casa State Site.csv,I-25 Denver State Site lm pm10_all,Yes,0.935992609,2.726898656,0.636185325
+89,National Jewish Health State Site I-25 Denver State Site lm pm10_all,National Jewish Health State Site.csv,I-25 Denver State Site lm pm10_all,Yes,0.935193296,2.690488925,0.737250661
+90,Swansea GRIMM I-25 Denver State Site lm pm10_all,Swansea GRIMM.csv,I-25 Denver State Site lm pm10_all,Yes,0.82635262,4.376952385,0.986776718
+91,CAMP State Site I-25 Denver State Site lm pm10,CAMP State Site.csv,I-25 Denver State Site lm pm10,Yes,0.692898925,5.873061151,2.803431303
+92,I-25 Globeville State Site I-25 Denver State Site lm pm10,I-25 Globeville State Site.csv,I-25 Denver State Site lm pm10,Yes,0.839770249,5.006246542,2.193126871
+93,La Casa State Site I-25 Denver State Site lm pm10,La Casa State Site.csv,I-25 Denver State Site lm pm10,Yes,0.929416797,2.934680727,0.994513778
+94,National Jewish Health State Site I-25 Denver State Site lm pm10,National Jewish Health State Site.csv,I-25 Denver State Site lm pm10,Yes,0.932062824,2.840306149,1.031821449
+95,Swansea GRIMM I-25 Denver State Site lm pm10,Swansea GRIMM.csv,I-25 Denver State Site lm pm10,Yes,0.819729241,4.578099795,1.477117364
+96,CAMP State Site I-25 Denver State Site lm smoke,CAMP State Site.csv,I-25 Denver State Site lm smoke,Yes,0.70656089,5.701385192,2.621023845
+97,I-25 Globeville State Site I-25 Denver State Site lm smoke,I-25 Globeville State Site.csv,I-25 Denver State Site lm smoke,Yes,0.835077127,5.150064601,2.386287686
+98,La Casa State Site I-25 Denver State Site lm smoke,La Casa State Site.csv,I-25 Denver State Site lm smoke,Yes,0.933669618,2.964497327,1.226608592
+99,National Jewish Health State Site I-25 Denver State Site lm smoke,National Jewish Health State Site.csv,I-25 Denver State Site lm smoke,Yes,0.935208875,2.864221336,1.176745334
+100,Swansea GRIMM I-25 Denver State Site lm smoke,Swansea GRIMM.csv,I-25 Denver State Site lm smoke,Yes,0.815895907,4.632298393,1.511838917
+101,CAMP State Site I-25 Denver State Site rft age,CAMP State Site.csv,I-25 Denver State Site rft age,Yes,0.668302511,5.830286832,2.366034973
+102,I-25 Globeville State Site I-25 Denver State Site rft age,I-25 Globeville State Site.csv,I-25 Denver State Site rft age,Yes,0.820769218,5.240944536,1.950729504
+103,La Casa State Site I-25 Denver State Site rft age,La Casa State Site.csv,I-25 Denver State Site rft age,Yes,0.929509659,3.280617326,1.071875232
+104,National Jewish Health State Site I-25 Denver State Site rft age,National Jewish Health State Site.csv,I-25 Denver State Site rft age,Yes,0.912474937,3.188798999,0.942749034
+105,Swansea GRIMM I-25 Denver State Site rft age,Swansea GRIMM.csv,I-25 Denver State Site rft age,Yes,0.816112418,4.690184149,1.380668821
+106,CAMP State Site I-25 Denver State Site rft all,CAMP State Site.csv,I-25 Denver State Site rft all,Yes,0.665385625,5.783958483,2.195482039
+107,I-25 Globeville State Site I-25 Denver State Site rft all,I-25 Globeville State Site.csv,I-25 Denver State Site rft all,Yes,0.80782119,5.249627862,1.740317618
+108,La Casa State Site I-25 Denver State Site rft all,La Casa State Site.csv,I-25 Denver State Site rft all,Yes,0.903234901,3.490201873,0.853828306
+109,National Jewish Health State Site I-25 Denver State Site rft all,National Jewish Health State Site.csv,I-25 Denver State Site rft all,Yes,0.89267698,3.313929819,0.745189048
+110,Swansea GRIMM I-25 Denver State Site rft all,Swansea GRIMM.csv,I-25 Denver State Site rft all,Yes,0.809057508,4.631668058,1.154309206
+111,CAMP State Site I-25 Denver State Site rft met,CAMP State Site.csv,I-25 Denver State Site rft met,Yes,0.661534129,6.053086337,2.745936874
+112,I-25 Globeville State Site I-25 Denver State Site rft met,I-25 Globeville State Site.csv,I-25 Denver State Site rft met,Yes,0.807571083,5.462900519,2.337829656
+113,La Casa State Site I-25 Denver State Site rft met,La Casa State Site.csv,I-25 Denver State Site rft met,Yes,0.928339721,3.265822514,1.327119578
+114,National Jewish Health State Site I-25 Denver State Site rft met,National Jewish Health State Site.csv,I-25 Denver State Site rft met,Yes,0.92387497,3.160986103,1.293990984
+115,Swansea GRIMM I-25 Denver State Site rft met,Swansea GRIMM.csv,I-25 Denver State Site rft met,Yes,0.794841424,4.850078009,1.542051892
+116,CAMP State Site I-25 Denver State Site rft pm10_all,CAMP State Site.csv,I-25 Denver State Site rft pm10_all,Yes,0.678056913,5.70493291,2.107302929
+117,I-25 Globeville State Site I-25 Denver State Site rft pm10_all,I-25 Globeville State Site.csv,I-25 Denver State Site rft pm10_all,Yes,0.831974889,4.882761463,1.614665664
+118,La Casa State Site I-25 Denver State Site rft pm10_all,La Casa State Site.csv,I-25 Denver State Site rft pm10_all,Yes,0.920945029,3.035258306,0.684885044
+119,National Jewish Health State Site I-25 Denver State Site rft pm10_all,National Jewish Health State Site.csv,I-25 Denver State Site rft pm10_all,Yes,0.92233377,2.875942227,0.759160495
+120,Swansea GRIMM I-25 Denver State Site rft pm10_all,Swansea GRIMM.csv,I-25 Denver State Site rft pm10_all,Yes,0.816421879,4.469868326,0.964039494
+121,CAMP State Site I-25 Denver State Site rft pm10,CAMP State Site.csv,I-25 Denver State Site rft pm10,Yes,0.675564157,5.801406223,2.378534674
+122,I-25 Globeville State Site I-25 Denver State Site rft pm10,I-25 Globeville State Site.csv,I-25 Denver State Site rft pm10,Yes,0.830761675,5.168321711,2.152027071
+123,La Casa State Site I-25 Denver State Site rft pm10,La Casa State Site.csv,I-25 Denver State Site rft pm10,Yes,0.938901457,3.037043576,1.210160344
+124,National Jewish Health State Site I-25 Denver State Site rft pm10,National Jewish Health State Site.csv,I-25 Denver State Site rft pm10,Yes,0.938718943,2.948489059,1.25012187
+125,Swansea GRIMM I-25 Denver State Site rft pm10,Swansea GRIMM.csv,I-25 Denver State Site rft pm10,Yes,0.801300162,4.750972545,1.416121943
+126,CAMP State Site I-25 Denver State Site rft smoke,CAMP State Site.csv,I-25 Denver State Site rft smoke,Yes,0.669792436,5.939000079,2.623130668
+127,I-25 Globeville State Site I-25 Denver State Site rft smoke,I-25 Globeville State Site.csv,I-25 Denver State Site rft smoke,Yes,0.80357042,5.570787501,2.423551499
+128,La Casa State Site I-25 Denver State Site rft smoke,La Casa State Site.csv,I-25 Denver State Site rft smoke,Yes,0.929549256,3.303096999,1.38622964
+129,National Jewish Health State Site I-25 Denver State Site rft smoke,National Jewish Health State Site.csv,I-25 Denver State Site rft smoke,Yes,0.925044794,3.173456336,1.317839197
+130,Swansea GRIMM I-25 Denver State Site rft smoke,Swansea GRIMM.csv,I-25 Denver State Site rft smoke,Yes,0.796015258,4.87142759,1.58546228
+131,CAMP State Site I-25 Globeville State Site lm age,CAMP State Site.csv,I-25 Globeville State Site lm age,Yes,0.701075401,5.182672253,0.753583083
+132,I-25 Denver State Site I-25 Globeville State Site lm age,I-25 Denver State Site.csv,I-25 Globeville State Site lm age,Yes,0.808818043,4.417496946,-2.018892841
+133,La Casa State Site I-25 Globeville State Site lm age,La Casa State Site.csv,I-25 Globeville State Site lm age,Yes,0.924477614,2.998717276,-1.118123149
+134,National Jewish Health State Site I-25 Globeville State Site lm age,National Jewish Health State Site.csv,I-25 Globeville State Site lm age,Yes,0.927627356,2.774939611,-0.941284915
+135,Swansea GRIMM I-25 Globeville State Site lm age,Swansea GRIMM.csv,I-25 Globeville State Site lm age,Yes,0.807135837,4.446203116,-0.526269443
+136,CAMP State Site I-25 Globeville State Site lm all,CAMP State Site.csv,I-25 Globeville State Site lm all,Yes,0.700716996,5.185128274,0.754495852
+137,I-25 Denver State Site I-25 Globeville State Site lm all,I-25 Denver State Site.csv,I-25 Globeville State Site lm all,Yes,0.80856881,4.419396345,-2.01839634
+138,La Casa State Site I-25 Globeville State Site lm all,La Casa State Site.csv,I-25 Globeville State Site lm all,Yes,0.923972269,3.006583191,-1.116921672
+139,National Jewish Health State Site I-25 Globeville State Site lm all,National Jewish Health State Site.csv,I-25 Globeville State Site lm all,Yes,0.927279079,2.780378138,-0.941097156
+140,Swansea GRIMM I-25 Globeville State Site lm all,Swansea GRIMM.csv,I-25 Globeville State Site lm all,Yes,0.806942833,4.448374889,-0.528224949
+141,CAMP State Site I-25 Globeville State Site lm met,CAMP State Site.csv,I-25 Globeville State Site lm met,Yes,0.695252925,5.2247103,0.701896117
+142,I-25 Denver State Site I-25 Globeville State Site lm met,I-25 Denver State Site.csv,I-25 Globeville State Site lm met,Yes,0.810552179,4.362376509,-1.93107813
+143,La Casa State Site I-25 Globeville State Site lm met,La Casa State Site.csv,I-25 Globeville State Site lm met,Yes,0.926580193,2.976605988,-1.151606914
+144,National Jewish Health State Site I-25 Globeville State Site lm met,National Jewish Health State Site.csv,I-25 Globeville State Site lm met,Yes,0.928935532,2.761767063,-0.962840498
+145,Swansea GRIMM I-25 Globeville State Site lm met,Swansea GRIMM.csv,I-25 Globeville State Site lm met,Yes,0.811492792,4.415769696,-0.630236627
+146,CAMP State Site I-25 Globeville State Site lm pm_raw,CAMP State Site.csv,I-25 Globeville State Site lm pm_raw,Yes,0.68068056,5.38432985,0.981930978
+147,I-25 Denver State Site I-25 Globeville State Site lm pm_raw,I-25 Denver State Site.csv,I-25 Globeville State Site lm pm_raw,Yes,0.807309081,4.132076223,-1.245914948
+148,La Casa State Site I-25 Globeville State Site lm pm_raw,La Casa State Site.csv,I-25 Globeville State Site lm pm_raw,Yes,0.920725309,3.078212996,-1.16834262
+149,National Jewish Health State Site I-25 Globeville State Site lm pm_raw,National Jewish Health State Site.csv,I-25 Globeville State Site lm pm_raw,Yes,0.922491018,2.785396441,-0.706369092
+150,Swansea GRIMM I-25 Globeville State Site lm pm_raw,Swansea GRIMM.csv,I-25 Globeville State Site lm pm_raw,Yes,0.804958777,4.449897846,-0.339090119
+151,CAMP State Site I-25 Globeville State Site lm pm10_all,CAMP State Site.csv,I-25 Globeville State Site lm pm10_all,Yes,0.678425838,5.482654681,1.354067755
+152,I-25 Denver State Site I-25 Globeville State Site lm pm10_all,I-25 Denver State Site.csv,I-25 Globeville State Site lm pm10_all,Yes,0.809529079,4.311648561,-1.783213871
+153,La Casa State Site I-25 Globeville State Site lm pm10_all,La Casa State Site.csv,I-25 Globeville State Site lm pm10_all,Yes,0.92454014,3.036786959,-1.21876487
+154,National Jewish Health State Site I-25 Globeville State Site lm pm10_all,National Jewish Health State Site.csv,I-25 Globeville State Site lm pm10_all,Yes,0.9260462,2.800621594,-0.9461254
+155,Swansea GRIMM I-25 Globeville State Site lm pm10_all,Swansea GRIMM.csv,I-25 Globeville State Site lm pm10_all,Yes,0.817443652,4.319008979,-0.306156509
+156,CAMP State Site I-25 Globeville State Site lm pm10,CAMP State Site.csv,I-25 Globeville State Site lm pm10,Yes,0.671564247,5.532812614,1.316128933
+157,I-25 Denver State Site I-25 Globeville State Site lm pm10,I-25 Denver State Site.csv,I-25 Globeville State Site lm pm10,Yes,0.811160008,4.25788893,-1.686749438
+158,La Casa State Site I-25 Globeville State Site lm pm10,La Casa State Site.csv,I-25 Globeville State Site lm pm10,Yes,0.926381919,3.02107585,-1.254299584
+159,National Jewish Health State Site I-25 Globeville State Site lm pm10,National Jewish Health State Site.csv,I-25 Globeville State Site lm pm10,Yes,0.927105914,2.790642947,-0.966078686
+160,Swansea GRIMM I-25 Globeville State Site lm pm10,Swansea GRIMM.csv,I-25 Globeville State Site lm pm10,Yes,0.820889252,4.290661352,-0.40290706
+161,CAMP State Site I-25 Globeville State Site lm smoke,CAMP State Site.csv,I-25 Globeville State Site lm smoke,Yes,0.694775979,5.227797941,0.705353082
+162,I-25 Denver State Site I-25 Globeville State Site lm smoke,I-25 Denver State Site.csv,I-25 Globeville State Site lm smoke,Yes,0.810025061,4.36793426,-1.933247408
+163,La Casa State Site I-25 Globeville State Site lm smoke,La Casa State Site.csv,I-25 Globeville State Site lm smoke,Yes,0.925585908,2.991744311,-1.148263485
+164,National Jewish Health State Site I-25 Globeville State Site lm smoke,National Jewish Health State Site.csv,I-25 Globeville State Site lm smoke,Yes,0.928253822,2.772190533,-0.96174781
+165,Swansea GRIMM I-25 Globeville State Site lm smoke,Swansea GRIMM.csv,I-25 Globeville State Site lm smoke,Yes,0.810972945,4.421011199,-0.6301428
+166,CAMP State Site I-25 Globeville State Site rft age,CAMP State Site.csv,I-25 Globeville State Site rft age,Yes,0.692602495,5.319864069,0.77287579
+167,I-25 Denver State Site I-25 Globeville State Site rft age,I-25 Denver State Site.csv,I-25 Globeville State Site rft age,Yes,0.806074483,4.825901644,-2.347561576
+168,La Casa State Site I-25 Globeville State Site rft age,La Casa State Site.csv,I-25 Globeville State Site rft age,Yes,0.891663987,3.382854918,-0.717265669
+169,National Jewish Health State Site I-25 Globeville State Site rft age,National Jewish Health State Site.csv,I-25 Globeville State Site rft age,Yes,0.88617269,3.343938636,-0.752332377
+170,Swansea GRIMM I-25 Globeville State Site rft age,Swansea GRIMM.csv,I-25 Globeville State Site rft age,Yes,0.810603219,4.435638575,-0.5383921
+171,CAMP State Site I-25 Globeville State Site rft all,CAMP State Site.csv,I-25 Globeville State Site rft all,Yes,0.688462202,5.312715149,0.825767807
+172,I-25 Denver State Site I-25 Globeville State Site rft all,I-25 Denver State Site.csv,I-25 Globeville State Site rft all,Yes,0.79440882,4.767286063,-2.188805436
+173,La Casa State Site I-25 Globeville State Site rft all,La Casa State Site.csv,I-25 Globeville State Site rft all,Yes,0.880822975,3.517529024,-0.653358687
+174,National Jewish Health State Site I-25 Globeville State Site rft all,National Jewish Health State Site.csv,I-25 Globeville State Site rft all,Yes,0.87858226,3.41458713,-0.703890954
+175,Swansea GRIMM I-25 Globeville State Site rft all,Swansea GRIMM.csv,I-25 Globeville State Site rft all,Yes,0.812451505,4.401988315,-0.50910056
+176,CAMP State Site I-25 Globeville State Site rft met,CAMP State Site.csv,I-25 Globeville State Site rft met,Yes,0.663447777,5.70084982,1.226877462
+177,I-25 Denver State Site I-25 Globeville State Site rft met,I-25 Denver State Site.csv,I-25 Globeville State Site rft met,Yes,0.809811363,4.7422194,-2.16815364
+178,La Casa State Site I-25 Globeville State Site rft met,La Casa State Site.csv,I-25 Globeville State Site rft met,Yes,0.911157738,3.182750611,-0.943677394
+179,National Jewish Health State Site I-25 Globeville State Site rft met,National Jewish Health State Site.csv,I-25 Globeville State Site rft met,Yes,0.907326881,3.101722199,-0.802458432
+180,Swansea GRIMM I-25 Globeville State Site rft met,Swansea GRIMM.csv,I-25 Globeville State Site rft met,Yes,0.812126779,4.447292314,-0.597111415
+181,CAMP State Site I-25 Globeville State Site rft pm10_all,CAMP State Site.csv,I-25 Globeville State Site rft pm10_all,Yes,0.717419895,5.149943087,0.907084344
+182,I-25 Denver State Site I-25 Globeville State Site rft pm10_all,I-25 Denver State Site.csv,I-25 Globeville State Site rft pm10_all,Yes,0.82685242,4.381891815,-1.93282717
+183,La Casa State Site I-25 Globeville State Site rft pm10_all,La Casa State Site.csv,I-25 Globeville State Site rft pm10_all,Yes,0.912652144,3.084314105,-0.764374426
+184,National Jewish Health State Site I-25 Globeville State Site rft pm10_all,National Jewish Health State Site.csv,I-25 Globeville State Site rft pm10_all,Yes,0.908997074,2.980110414,-0.583428866
+185,Swansea GRIMM I-25 Globeville State Site rft pm10_all,Swansea GRIMM.csv,I-25 Globeville State Site rft pm10_all,Yes,0.814804211,4.388006702,-0.411968155
+186,CAMP State Site I-25 Globeville State Site rft pm10,CAMP State Site.csv,I-25 Globeville State Site rft pm10,Yes,0.654699286,5.817880254,0.950043245
+187,I-25 Denver State Site I-25 Globeville State Site rft pm10,I-25 Denver State Site.csv,I-25 Globeville State Site rft pm10,Yes,0.82222133,4.31160143,-1.719821295
+188,La Casa State Site I-25 Globeville State Site rft pm10,La Casa State Site.csv,I-25 Globeville State Site rft pm10,Yes,0.912995916,3.136913433,-0.937072873
+189,National Jewish Health State Site I-25 Globeville State Site rft pm10,National Jewish Health State Site.csv,I-25 Globeville State Site rft pm10,Yes,0.917674928,2.841150059,-0.594609418
+190,Swansea GRIMM I-25 Globeville State Site rft pm10,Swansea GRIMM.csv,I-25 Globeville State Site rft pm10,Yes,0.80248415,4.520364253,-0.435526449
+191,CAMP State Site I-25 Globeville State Site rft smoke,CAMP State Site.csv,I-25 Globeville State Site rft smoke,Yes,0.667986922,5.613683002,1.175292239
+192,I-25 Denver State Site I-25 Globeville State Site rft smoke,I-25 Denver State Site.csv,I-25 Globeville State Site rft smoke,Yes,0.808665521,4.636578986,-2.068677965
+193,La Casa State Site I-25 Globeville State Site rft smoke,La Casa State Site.csv,I-25 Globeville State Site rft smoke,Yes,0.909342305,3.187864256,-0.933571907
+194,National Jewish Health State Site I-25 Globeville State Site rft smoke,National Jewish Health State Site.csv,I-25 Globeville State Site rft smoke,Yes,0.906487381,3.075878291,-0.780869187
+195,Swansea GRIMM I-25 Globeville State Site rft smoke,Swansea GRIMM.csv,I-25 Globeville State Site rft smoke,Yes,0.813013195,4.415848418,-0.565844421
+196,CAMP State Site La Casa State Site lm age,CAMP State Site.csv,La Casa State Site lm age,Yes,0.689640252,5.440986276,1.461100029
+197,I-25 Denver State Site La Casa State Site lm age,I-25 Denver State Site.csv,La Casa State Site lm age,Yes,0.809680844,3.978845098,-0.670880281
+198,I-25 Globeville State Site La Casa State Site lm age,I-25 Globeville State Site.csv,La Casa State Site lm age,Yes,0.83143525,4.685837738,1.074586851
+199,National Jewish Health State Site La Casa State Site lm age,National Jewish Health State Site.csv,La Casa State Site lm age,Yes,0.933822187,2.505764927,0.179449774
+200,Swansea GRIMM La Casa State Site lm age,Swansea GRIMM.csv,La Casa State Site lm age,Yes,0.818034022,4.314855155,0.339297488
+201,CAMP State Site La Casa State Site lm all,CAMP State Site.csv,La Casa State Site lm all,Yes,0.690871716,5.460578324,1.448182434
+202,I-25 Denver State Site La Casa State Site lm all,I-25 Denver State Site.csv,La Casa State Site lm all,Yes,0.80883557,3.993458987,-0.651507553
+203,I-25 Globeville State Site La Casa State Site lm all,I-25 Globeville State Site.csv,La Casa State Site lm all,Yes,0.823783701,4.788644012,1.118757514
+204,National Jewish Health State Site La Casa State Site lm all,National Jewish Health State Site.csv,La Casa State Site lm all,Yes,0.937228438,2.443677138,0.202224797
+205,Swansea GRIMM La Casa State Site lm all,Swansea GRIMM.csv,La Casa State Site lm all,Yes,0.819167472,4.309542959,0.416674542
+206,CAMP State Site La Casa State Site lm met,CAMP State Site.csv,La Casa State Site lm met,Yes,0.702031401,5.350381777,1.530893311
+207,I-25 Denver State Site La Casa State Site lm met,I-25 Denver State Site.csv,La Casa State Site lm met,Yes,0.808096354,4.041070613,-0.928939599
+208,I-25 Globeville State Site La Casa State Site lm met,I-25 Globeville State Site.csv,La Casa State Site lm met,Yes,0.835224628,4.628005489,1.022103978
+209,National Jewish Health State Site La Casa State Site lm met,National Jewish Health State Site.csv,La Casa State Site lm met,Yes,0.933486474,2.513958849,0.150215585
+210,Swansea GRIMM La Casa State Site lm met,Swansea GRIMM.csv,La Casa State Site lm met,Yes,0.813187926,4.380170905,0.486746507
+211,CAMP State Site La Casa State Site lm pm_raw,CAMP State Site.csv,La Casa State Site lm pm_raw,Yes,0.68068056,5.712339149,2.149122404
+212,I-25 Denver State Site La Casa State Site lm pm_raw,I-25 Denver State Site.csv,La Casa State Site lm pm_raw,Yes,0.807309081,3.939133441,-0.076044773
+213,I-25 Globeville State Site La Casa State Site lm pm_raw,I-25 Globeville State Site.csv,La Casa State Site lm pm_raw,Yes,0.835577819,4.653298874,1.147107384
+214,National Jewish Health State Site La Casa State Site lm pm_raw,National Jewish Health State Site.csv,La Casa State Site lm pm_raw,Yes,0.922491018,2.734474581,0.463006073
+215,Swansea GRIMM La Casa State Site lm pm_raw,Swansea GRIMM.csv,La Casa State Site lm pm_raw,Yes,0.804958777,4.514112255,0.830546586
+216,CAMP State Site La Casa State Site lm pm10_all,CAMP State Site.csv,La Casa State Site lm pm10_all,Yes,0.674077188,5.800136085,2.088981993
+217,I-25 Denver State Site La Casa State Site lm pm10_all,I-25 Denver State Site.csv,La Casa State Site lm pm10_all,Yes,0.806994509,3.981715086,-0.417595716
+218,I-25 Globeville State Site La Casa State Site lm pm10_all,I-25 Globeville State Site.csv,La Casa State Site lm pm10_all,Yes,0.826379211,4.784471442,1.218314457
+219,National Jewish Health State Site La Casa State Site lm pm10_all,National Jewish Health State Site.csv,La Casa State Site lm pm10_all,Yes,0.9388541,2.422595542,0.274926821
+220,Swansea GRIMM La Casa State Site lm pm10_all,Swansea GRIMM.csv,La Casa State Site lm pm10_all,Yes,0.825155783,4.293910792,0.768824356
+221,CAMP State Site La Casa State Site lm pm10,CAMP State Site.csv,La Casa State Site lm pm10,Yes,0.675275027,5.837381763,2.330711266
+222,I-25 Denver State Site La Casa State Site lm pm10,I-25 Denver State Site.csv,La Casa State Site lm pm10,Yes,0.805231929,4.005943207,-0.56580756
+223,I-25 Globeville State Site La Casa State Site lm pm10,I-25 Globeville State Site.csv,La Casa State Site lm pm10,Yes,0.83489283,4.666137046,1.162620897
+224,National Jewish Health State Site La Casa State Site lm pm10,National Jewish Health State Site.csv,La Casa State Site lm pm10,Yes,0.935461538,2.487629556,0.249840848
+225,Swansea GRIMM La Casa State Site lm pm10,Swansea GRIMM.csv,La Casa State Site lm pm10,Yes,0.822787558,4.345226876,0.901833861
+226,CAMP State Site La Casa State Site lm smoke,CAMP State Site.csv,La Casa State Site lm smoke,Yes,0.699244339,5.395540459,1.502123973
+227,I-25 Denver State Site La Casa State Site lm smoke,I-25 Denver State Site.csv,La Casa State Site lm smoke,Yes,0.807081887,4.045047009,-0.852200228
+228,I-25 Globeville State Site La Casa State Site lm smoke,I-25 Globeville State Site.csv,La Casa State Site lm smoke,Yes,0.826406976,4.747417225,1.079705683
+229,National Jewish Health State Site La Casa State Site lm smoke,National Jewish Health State Site.csv,La Casa State Site lm smoke,Yes,0.936970788,2.449370873,0.180391809
+230,Swansea GRIMM La Casa State Site lm smoke,Swansea GRIMM.csv,La Casa State Site lm smoke,Yes,0.814876713,4.367911604,0.535223913
+231,CAMP State Site La Casa State Site rft age,CAMP State Site.csv,La Casa State Site rft age,Yes,0.682557864,5.657602647,1.582894686
+232,I-25 Denver State Site La Casa State Site rft age,I-25 Denver State Site.csv,La Casa State Site rft age,Yes,0.812622149,3.941325307,-0.508340542
+233,I-25 Globeville State Site La Casa State Site rft age,I-25 Globeville State Site.csv,La Casa State Site rft age,Yes,0.813867398,4.876170577,0.997928147
+234,National Jewish Health State Site La Casa State Site rft age,National Jewish Health State Site.csv,La Casa State Site rft age,Yes,0.962299719,1.913154449,0.124751023
+235,Swansea GRIMM La Casa State Site rft age,Swansea GRIMM.csv,La Casa State Site rft age,Yes,0.830501197,4.182223553,0.34548712
+236,CAMP State Site La Casa State Site rft all,CAMP State Site.csv,La Casa State Site rft all,Yes,0.691567419,5.646277539,1.643729855
+237,I-25 Denver State Site La Casa State Site rft all,I-25 Denver State Site.csv,La Casa State Site rft all,Yes,0.817853649,3.963586529,-0.692469624
+238,I-25 Globeville State Site La Casa State Site rft all,I-25 Globeville State Site.csv,La Casa State Site rft all,Yes,0.818851224,4.820902968,0.971149811
+239,National Jewish Health State Site La Casa State Site rft all,National Jewish Health State Site.csv,La Casa State Site rft all,Yes,0.958769071,1.984161156,0.091640622
+240,Swansea GRIMM La Casa State Site rft all,Swansea GRIMM.csv,La Casa State Site rft all,Yes,0.827778192,4.20556256,0.290813647
+241,CAMP State Site La Casa State Site rft met,CAMP State Site.csv,La Casa State Site rft met,Yes,0.678416209,5.77748627,1.929013959
+242,I-25 Denver State Site La Casa State Site rft met,I-25 Denver State Site.csv,La Casa State Site rft met,Yes,0.818584003,3.995121692,-0.918885432
+243,I-25 Globeville State Site La Casa State Site rft met,I-25 Globeville State Site.csv,La Casa State Site rft met,Yes,0.821781767,4.790424074,0.992388442
+244,National Jewish Health State Site La Casa State Site rft met,National Jewish Health State Site.csv,La Casa State Site rft met,Yes,0.958094499,2.011505498,0.13644193
+245,Swansea GRIMM La Casa State Site rft met,Swansea GRIMM.csv,La Casa State Site rft met,Yes,0.818822909,4.318233462,0.461435077
+246,CAMP State Site La Casa State Site rft pm10_all,CAMP State Site.csv,La Casa State Site rft pm10_all,Yes,0.69935538,5.583619007,1.740886103
+247,I-25 Denver State Site La Casa State Site rft pm10_all,I-25 Denver State Site.csv,La Casa State Site rft pm10_all,Yes,0.817115026,3.94335842,-0.65360672
+248,I-25 Globeville State Site La Casa State Site rft pm10_all,I-25 Globeville State Site.csv,La Casa State Site rft pm10_all,Yes,0.818663046,4.826708355,0.965748921
+249,National Jewish Health State Site La Casa State Site rft pm10_all,National Jewish Health State Site.csv,La Casa State Site rft pm10_all,Yes,0.961329194,1.93229858,0.194285433
+250,Swansea GRIMM La Casa State Site rft pm10_all,Swansea GRIMM.csv,La Casa State Site rft pm10_all,Yes,0.831802498,4.164199982,0.332900182
+251,CAMP State Site La Casa State Site rft pm10,CAMP State Site.csv,La Casa State Site rft pm10,Yes,0.691626419,5.667190794,2.088845139
+252,I-25 Denver State Site La Casa State Site rft pm10,I-25 Denver State Site.csv,La Casa State Site rft pm10,Yes,0.81902111,3.949534023,-0.760226487
+253,I-25 Globeville State Site La Casa State Site rft pm10,I-25 Globeville State Site.csv,La Casa State Site rft pm10,Yes,0.823205341,4.768183433,0.962512562
+254,National Jewish Health State Site La Casa State Site rft pm10,National Jewish Health State Site.csv,La Casa State Site rft pm10,Yes,0.961634892,1.948413417,0.256314295
+255,Swansea GRIMM La Casa State Site rft pm10,Swansea GRIMM.csv,La Casa State Site rft pm10,Yes,0.829616776,4.221970838,0.58622756
+256,CAMP State Site La Casa State Site rft smoke,CAMP State Site.csv,La Casa State Site rft smoke,Yes,0.689693764,5.660735184,1.847009512
+257,I-25 Denver State Site La Casa State Site rft smoke,I-25 Denver State Site.csv,La Casa State Site rft smoke,Yes,0.816124741,3.974786145,-0.838341482
+258,I-25 Globeville State Site La Casa State Site rft smoke,I-25 Globeville State Site.csv,La Casa State Site rft smoke,Yes,0.817703726,4.841088828,1.039840771
+259,National Jewish Health State Site La Casa State Site rft smoke,National Jewish Health State Site.csv,La Casa State Site rft smoke,Yes,0.957365697,2.040409396,0.167413314
+260,Swansea GRIMM La Casa State Site rft smoke,Swansea GRIMM.csv,La Casa State Site rft smoke,Yes,0.821101329,4.304275345,0.515819165
+261,CAMP State Site National Jewish Health State Site lm age,CAMP State Site.csv,National Jewish Health State Site lm age,Yes,0.697759899,5.372283676,1.353356469
+262,I-25 Denver State Site National Jewish Health State Site lm age,I-25 Denver State Site.csv,National Jewish Health State Site lm age,Yes,0.81047091,4.103420513,-1.11990102
+263,I-25 Globeville State Site National Jewish Health State Site lm age,I-25 Globeville State Site.csv,National Jewish Health State Site lm age,Yes,0.832760815,4.651638203,0.95144392
+264,La Casa State Site National Jewish Health State Site lm age,La Casa State Site.csv,National Jewish Health State Site lm age,Yes,0.931576634,2.667106895,-0.080592958
+265,Swansea GRIMM National Jewish Health State Site lm age,Swansea GRIMM.csv,National Jewish Health State Site lm age,Yes,0.817778961,4.309984951,0.190837119
+266,CAMP State Site National Jewish Health State Site lm all,CAMP State Site.csv,National Jewish Health State Site lm all,Yes,0.700262888,5.368588318,1.319006986
+267,I-25 Denver State Site National Jewish Health State Site lm all,I-25 Denver State Site.csv,National Jewish Health State Site lm all,Yes,0.81157835,4.101053213,-1.122036517
+268,I-25 Globeville State Site National Jewish Health State Site lm all,I-25 Globeville State Site.csv,National Jewish Health State Site lm all,Yes,0.828472838,4.70989109,0.963196944
+269,La Casa State Site National Jewish Health State Site lm all,La Casa State Site.csv,National Jewish Health State Site lm all,Yes,0.939083489,2.522777725,-0.099260997
+270,Swansea GRIMM National Jewish Health State Site lm all,Swansea GRIMM.csv,National Jewish Health State Site lm all,Yes,0.820019829,4.287666213,0.227221581
+271,CAMP State Site National Jewish Health State Site lm met,CAMP State Site.csv,National Jewish Health State Site lm met,Yes,0.704739895,5.323407024,1.411596829
+272,I-25 Denver State Site National Jewish Health State Site lm met,I-25 Denver State Site.csv,National Jewish Health State Site lm met,Yes,0.808713315,4.155687397,-1.24363499
+273,I-25 Globeville State Site National Jewish Health State Site lm met,I-25 Globeville State Site.csv,National Jewish Health State Site lm met,Yes,0.834857313,4.614783219,0.901191386
+274,La Casa State Site National Jewish Health State Site lm met,La Casa State Site.csv,National Jewish Health State Site lm met,Yes,0.929840149,2.702601611,-0.087771756
+275,Swansea GRIMM National Jewish Health State Site lm met,Swansea GRIMM.csv,National Jewish Health State Site lm met,Yes,0.813513312,4.362716045,0.315702497
+276,CAMP State Site National Jewish Health State Site lm pm_raw,CAMP State Site.csv,National Jewish Health State Site lm pm_raw,Yes,0.68068056,5.588470772,1.72024765
+277,I-25 Denver State Site National Jewish Health State Site lm pm_raw,I-25 Denver State Site.csv,National Jewish Health State Site lm pm_raw,Yes,0.807309081,4.00117352,-0.547811075
+278,I-25 Globeville State Site National Jewish Health State Site lm pm_raw,I-25 Globeville State Site.csv,National Jewish Health State Site lm pm_raw,Yes,0.835577819,4.557058567,0.644728383
+279,La Casa State Site National Jewish Health State Site lm pm_raw,La Casa State Site.csv,National Jewish Health State Site lm pm_raw,Yes,0.920725309,2.895513017,-0.484388062
+280,Swansea GRIMM National Jewish Health State Site lm pm_raw,Swansea GRIMM.csv,National Jewish Health State Site lm pm_raw,Yes,0.804958777,4.453451905,0.362518542
+281,CAMP State Site National Jewish Health State Site lm pm10_all,CAMP State Site.csv,National Jewish Health State Site lm pm10_all,Yes,0.685029342,5.642333984,1.820470075
+282,I-25 Denver State Site National Jewish Health State Site lm pm10_all,I-25 Denver State Site.csv,National Jewish Health State Site lm pm10_all,Yes,0.810137357,4.069290145,-0.931641855
+283,I-25 Globeville State Site National Jewish Health State Site lm pm10_all,I-25 Globeville State Site.csv,National Jewish Health State Site lm pm10_all,Yes,0.830568213,4.688667663,0.964233041
+284,La Casa State Site National Jewish Health State Site lm pm10_all,La Casa State Site.csv,National Jewish Health State Site lm pm10_all,Yes,0.941200211,2.484115299,-0.186796344
+285,Swansea GRIMM National Jewish Health State Site lm pm10_all,Swansea GRIMM.csv,National Jewish Health State Site lm pm10_all,Yes,0.82591506,4.244737971,0.475939052
+286,CAMP State Site National Jewish Health State Site lm pm10,CAMP State Site.csv,National Jewish Health State Site lm pm10,Yes,0.684077293,5.676459299,1.992049043
+287,I-25 Denver State Site National Jewish Health State Site lm pm10,I-25 Denver State Site.csv,National Jewish Health State Site lm pm10,Yes,0.807247886,4.104322146,-0.986170327
+288,I-25 Globeville State Site National Jewish Health State Site lm pm10,I-25 Globeville State Site.csv,National Jewish Health State Site lm pm10,Yes,0.835456229,4.615888829,0.915231625
+289,La Casa State Site National Jewish Health State Site lm pm10,La Casa State Site.csv,National Jewish Health State Site lm pm10,Yes,0.933237543,2.64299938,-0.192187571
+290,Swansea GRIMM National Jewish Health State Site lm pm10,Swansea GRIMM.csv,National Jewish Health State Site lm pm10,Yes,0.822420618,4.295930033,0.580518641
+291,CAMP State Site National Jewish Health State Site lm smoke,CAMP State Site.csv,National Jewish Health State Site lm smoke,Yes,0.705380015,5.331597523,1.364146407
+292,I-25 Denver State Site National Jewish Health State Site lm smoke,I-25 Denver State Site.csv,National Jewish Health State Site lm smoke,Yes,0.810076143,4.144081143,-1.22051146
+293,I-25 Globeville State Site National Jewish Health State Site lm smoke,I-25 Globeville State Site.csv,National Jewish Health State Site lm smoke,Yes,0.830083524,4.681462749,0.923635507
+294,La Casa State Site National Jewish Health State Site lm smoke,La Casa State Site.csv,National Jewish Health State Site lm smoke,Yes,0.938011626,2.546634964,-0.105609908
+295,Swansea GRIMM National Jewish Health State Site lm smoke,Swansea GRIMM.csv,National Jewish Health State Site lm smoke,Yes,0.816541088,4.331578114,0.327770164
+296,CAMP State Site National Jewish Health State Site rft age,CAMP State Site.csv,National Jewish Health State Site rft age,Yes,0.671968586,5.7585423,1.493371651
+297,I-25 Denver State Site National Jewish Health State Site rft age,I-25 Denver State Site.csv,National Jewish Health State Site rft age,Yes,0.808473375,4.049175563,-0.893391303
+298,I-25 Globeville State Site National Jewish Health State Site rft age,I-25 Globeville State Site.csv,National Jewish Health State Site rft age,Yes,0.800455083,5.033444524,0.936439887
+299,La Casa State Site National Jewish Health State Site rft age,La Casa State Site.csv,National Jewish Health State Site rft age,Yes,0.965482779,1.931981716,-0.301910401
+300,Swansea GRIMM National Jewish Health State Site rft age,Swansea GRIMM.csv,National Jewish Health State Site rft age,Yes,0.829659019,4.177052254,0.078937663
+301,CAMP State Site National Jewish Health State Site rft all,CAMP State Site.csv,National Jewish Health State Site rft all,Yes,0.682125222,5.737176658,1.486867986
+302,I-25 Denver State Site National Jewish Health State Site rft all,I-25 Denver State Site.csv,National Jewish Health State Site rft all,Yes,0.810640286,4.082126985,-0.95624072
+303,I-25 Globeville State Site National Jewish Health State Site rft all,I-25 Globeville State Site.csv,National Jewish Health State Site rft all,Yes,0.799983749,5.056234389,0.921399089
+304,La Casa State Site National Jewish Health State Site rft all,La Casa State Site.csv,National Jewish Health State Site rft all,Yes,0.966965077,1.900882406,-0.304683019
+305,Swansea GRIMM National Jewish Health State Site rft all,Swansea GRIMM.csv,National Jewish Health State Site rft all,Yes,0.830100113,4.17452395,0.066377081
+306,CAMP State Site National Jewish Health State Site rft met,CAMP State Site.csv,National Jewish Health State Site rft met,Yes,0.67450474,5.81100503,1.707543846
+307,I-25 Denver State Site National Jewish Health State Site rft met,I-25 Denver State Site.csv,National Jewish Health State Site rft met,Yes,0.816527841,4.135727199,-1.110313447
+308,I-25 Globeville State Site National Jewish Health State Site rft met,I-25 Globeville State Site.csv,National Jewish Health State Site rft met,Yes,0.814314045,4.880026643,0.795757766
+309,La Casa State Site National Jewish Health State Site rft met,La Casa State Site.csv,National Jewish Health State Site rft met,Yes,0.959239119,2.085930681,-0.143043997
+310,Swansea GRIMM National Jewish Health State Site rft met,Swansea GRIMM.csv,National Jewish Health State Site rft met,Yes,0.815481455,4.341263706,0.302965485
+311,CAMP State Site National Jewish Health State Site rft pm10_all,CAMP State Site.csv,National Jewish Health State Site rft pm10_all,Yes,0.704831032,5.463709851,1.444455177
+312,I-25 Denver State Site National Jewish Health State Site rft pm10_all,I-25 Denver State Site.csv,National Jewish Health State Site rft pm10_all,Yes,0.813957314,4.064364043,-1.023688513
+313,I-25 Globeville State Site National Jewish Health State Site rft pm10_all,I-25 Globeville State Site.csv,National Jewish Health State Site rft pm10_all,Yes,0.807328275,4.948101244,0.761417221
+314,La Casa State Site National Jewish Health State Site rft pm10_all,La Casa State Site.csv,National Jewish Health State Site rft pm10_all,Yes,0.969176541,1.856581861,-0.413021855
+315,Swansea GRIMM National Jewish Health State Site rft pm10_all,Swansea GRIMM.csv,National Jewish Health State Site rft pm10_all,Yes,0.830847689,4.16719491,-0.04992711
+316,CAMP State Site National Jewish Health State Site rft pm10,CAMP State Site.csv,National Jewish Health State Site rft pm10,Yes,0.707888223,5.326183013,1.301384169
+317,I-25 Denver State Site National Jewish Health State Site rft pm10,I-25 Denver State Site.csv,National Jewish Health State Site rft pm10,Yes,0.820923762,4.050294866,-1.128236752
+318,I-25 Globeville State Site National Jewish Health State Site rft pm10,I-25 Globeville State Site.csv,National Jewish Health State Site rft pm10,Yes,0.821471962,4.742937806,0.642359658
+319,La Casa State Site National Jewish Health State Site rft pm10,La Casa State Site.csv,National Jewish Health State Site rft pm10,Yes,0.962216018,2.005637694,-0.259575303
+320,Swansea GRIMM National Jewish Health State Site rft pm10,Swansea GRIMM.csv,National Jewish Health State Site rft pm10,Yes,0.818865917,4.29592846,0.178925598
+321,CAMP State Site National Jewish Health State Site rft smoke,CAMP State Site.csv,National Jewish Health State Site rft smoke,Yes,0.681679954,5.721310739,1.662129464
+322,I-25 Denver State Site National Jewish Health State Site rft smoke,I-25 Denver State Site.csv,National Jewish Health State Site rft smoke,Yes,0.816250514,4.094390468,-1.0485854
+323,I-25 Globeville State Site National Jewish Health State Site rft smoke,I-25 Globeville State Site.csv,National Jewish Health State Site rft smoke,Yes,0.812131546,4.886429346,0.835335897
+324,La Casa State Site National Jewish Health State Site rft smoke,La Casa State Site.csv,National Jewish Health State Site rft smoke,Yes,0.962933936,1.976153966,-0.138995114
+325,Swansea GRIMM National Jewish Health State Site rft smoke,Swansea GRIMM.csv,National Jewish Health State Site rft smoke,Yes,0.818389472,4.309459887,0.318179657
+326,CAMP State Site Swansea GRIMM lm age,CAMP State Site.csv,Swansea GRIMM lm age,Yes,0.682092841,5.497875099,1.39230918
+327,I-25 Denver State Site Swansea GRIMM lm age,I-25 Denver State Site.csv,Swansea GRIMM lm age,Yes,0.813076335,4.014381265,-0.9445612
+328,I-25 Globeville State Site Swansea GRIMM lm age,I-25 Globeville State Site.csv,Swansea GRIMM lm age,Yes,0.829983565,4.718236531,1.128432512
+329,La Casa State Site Swansea GRIMM lm age,La Casa State Site.csv,Swansea GRIMM lm age,Yes,0.928703708,2.708240539,-0.031011567
+330,National Jewish Health State Site Swansea GRIMM lm age,National Jewish Health State Site.csv,Swansea GRIMM lm age,Yes,0.931258971,2.54082443,-0.006513354
+331,CAMP State Site Swansea GRIMM lm all,CAMP State Site.csv,Swansea GRIMM lm all,Yes,0.685348305,5.478964589,1.329741102
+332,I-25 Denver State Site Swansea GRIMM lm all,I-25 Denver State Site.csv,Swansea GRIMM lm all,Yes,0.814707584,4.008160054,-0.960473117
+333,I-25 Globeville State Site Swansea GRIMM lm all,I-25 Globeville State Site.csv,Swansea GRIMM lm all,Yes,0.826426034,4.760022662,1.116043081
+334,La Casa State Site Swansea GRIMM lm all,La Casa State Site.csv,Swansea GRIMM lm all,Yes,0.935410376,2.582980669,-0.06444215
+335,National Jewish Health State Site Swansea GRIMM lm all,National Jewish Health State Site.csv,Swansea GRIMM lm all,Yes,0.935214116,2.469087025,-0.025772
+336,CAMP State Site Swansea GRIMM lm met,CAMP State Site.csv,Swansea GRIMM lm met,Yes,0.704354282,5.249385849,1.174031608
+337,I-25 Denver State Site Swansea GRIMM lm met,I-25 Denver State Site.csv,Swansea GRIMM lm met,Yes,0.810612207,4.21511184,-1.541309862
+338,I-25 Globeville State Site Swansea GRIMM lm met,I-25 Globeville State Site.csv,Swansea GRIMM lm met,Yes,0.83671773,4.543604994,0.657195683
+339,La Casa State Site Swansea GRIMM lm met,La Casa State Site.csv,Swansea GRIMM lm met,Yes,0.929452836,2.721760956,-0.379191828
+340,National Jewish Health State Site Swansea GRIMM lm met,National Jewish Health State Site.csv,Swansea GRIMM lm met,Yes,0.933251254,2.527060001,-0.318346065
+341,CAMP State Site Swansea GRIMM lm pm_raw,CAMP State Site.csv,Swansea GRIMM lm pm_raw,Yes,0.68068056,5.462331969,1.328395375
+342,I-25 Denver State Site Swansea GRIMM lm pm_raw,I-25 Denver State Site.csv,Swansea GRIMM lm pm_raw,Yes,0.807309081,4.047112472,-0.907528906
+343,I-25 Globeville State Site Swansea GRIMM lm pm_raw,I-25 Globeville State Site.csv,Swansea GRIMM lm pm_raw,Yes,0.835577819,4.519799975,0.307945655
+344,La Casa State Site Swansea GRIMM lm pm_raw,La Casa State Site.csv,Swansea GRIMM lm pm_raw,Yes,0.920725309,2.967589907,-0.832799036
+345,National Jewish Health State Site Swansea GRIMM lm pm_raw,National Jewish Health State Site.csv,Swansea GRIMM lm pm_raw,Yes,0.922491018,2.717487016,-0.366490237
+346,CAMP State Site Swansea GRIMM lm pm10_all,CAMP State Site.csv,Swansea GRIMM lm pm10_all,Yes,0.666434585,5.725285303,1.681875483
+347,I-25 Denver State Site Swansea GRIMM lm pm10_all,I-25 Denver State Site.csv,Swansea GRIMM lm pm10_all,Yes,0.813775178,4.057630309,-1.117186779
+348,I-25 Globeville State Site Swansea GRIMM lm pm10_all,I-25 Globeville State Site.csv,Swansea GRIMM lm pm10_all,Yes,0.833793074,4.58737701,0.679456997
+349,La Casa State Site Swansea GRIMM lm pm10_all,La Casa State Site.csv,Swansea GRIMM lm pm10_all,Yes,0.938036416,2.602834858,-0.612324999
+350,National Jewish Health State Site Swansea GRIMM lm pm10_all,National Jewish Health State Site.csv,Swansea GRIMM lm pm10_all,Yes,0.936583214,2.480607579,-0.416095262
+351,CAMP State Site Swansea GRIMM lm pm10,CAMP State Site.csv,Swansea GRIMM lm pm10,Yes,0.667814382,5.69216023,1.719574261
+352,I-25 Denver State Site Swansea GRIMM lm pm10,I-25 Denver State Site.csv,Swansea GRIMM lm pm10,Yes,0.808898836,4.209690047,-1.468503057
+353,I-25 Globeville State Site Swansea GRIMM lm pm10,I-25 Globeville State Site.csv,Swansea GRIMM lm pm10,Yes,0.838885472,4.482004108,0.311213177
+354,La Casa State Site Swansea GRIMM lm pm10,La Casa State Site.csv,Swansea GRIMM lm pm10,Yes,0.931538503,2.813426336,-0.929378048
+355,National Jewish Health State Site Swansea GRIMM lm pm10,National Jewish Health State Site.csv,Swansea GRIMM lm pm10,Yes,0.932923314,2.603715507,-0.679906818
+356,CAMP State Site Swansea GRIMM lm smoke,CAMP State Site.csv,Swansea GRIMM lm smoke,Yes,0.705802335,5.243427927,1.113633505
+357,I-25 Denver State Site Swansea GRIMM lm smoke,I-25 Denver State Site.csv,Swansea GRIMM lm smoke,Yes,0.812252236,4.205256989,-1.538198417
+358,I-25 Globeville State Site Swansea GRIMM lm smoke,I-25 Globeville State Site.csv,Swansea GRIMM lm smoke,Yes,0.833023487,4.591295676,0.659843338
+359,La Casa State Site Swansea GRIMM lm smoke,La Casa State Site.csv,Swansea GRIMM lm smoke,Yes,0.937031884,2.583044493,-0.403560476
+360,National Jewish Health State Site Swansea GRIMM lm smoke,National Jewish Health State Site.csv,Swansea GRIMM lm smoke,Yes,0.937705857,2.446622194,-0.328587433
+361,CAMP State Site Swansea GRIMM rft age,CAMP State Site.csv,Swansea GRIMM rft age,Yes,0.667077963,5.587022037,0.719726246
+362,I-25 Denver State Site Swansea GRIMM rft age,I-25 Denver State Site.csv,Swansea GRIMM rft age,Yes,0.756381314,4.557318066,-1.212008442
+363,I-25 Globeville State Site Swansea GRIMM rft age,I-25 Globeville State Site.csv,Swansea GRIMM rft age,Yes,0.779592771,5.236409601,0.753124281
+364,La Casa State Site Swansea GRIMM rft age,La Casa State Site.csv,Swansea GRIMM rft age,Yes,0.879259857,3.499501621,-0.270624068
+365,National Jewish Health State Site Swansea GRIMM rft age,National Jewish Health State Site.csv,Swansea GRIMM rft age,Yes,0.887699498,3.238452354,-0.289052899
+366,CAMP State Site Swansea GRIMM rft all,CAMP State Site.csv,Swansea GRIMM rft all,Yes,0.686531129,5.414570009,0.636048087
+367,I-25 Denver State Site Swansea GRIMM rft all,I-25 Denver State Site.csv,Swansea GRIMM rft all,Yes,0.767660585,4.479427242,-1.242315488
+368,I-25 Globeville State Site Swansea GRIMM rft all,I-25 Globeville State Site.csv,Swansea GRIMM rft all,Yes,0.772660806,5.300182345,0.770115788
+369,La Casa State Site Swansea GRIMM rft all,La Casa State Site.csv,Swansea GRIMM rft all,Yes,0.875614652,3.55031584,-0.294317778
+370,National Jewish Health State Site Swansea GRIMM rft all,National Jewish Health State Site.csv,Swansea GRIMM rft all,Yes,0.886664001,3.254948814,-0.315777388
+371,CAMP State Site Swansea GRIMM rft met,CAMP State Site.csv,Swansea GRIMM rft met,Yes,0.673265252,5.566324891,1.279981562
+372,I-25 Denver State Site Swansea GRIMM rft met,I-25 Denver State Site.csv,Swansea GRIMM rft met,Yes,0.791372824,4.495569383,-1.396899672
+373,I-25 Globeville State Site Swansea GRIMM rft met,I-25 Globeville State Site.csv,Swansea GRIMM rft met,Yes,0.842633855,4.454019691,0.545013816
+374,La Casa State Site Swansea GRIMM rft met,La Casa State Site.csv,Swansea GRIMM rft met,Yes,0.919366172,2.885665897,-0.269659777
+375,National Jewish Health State Site Swansea GRIMM rft met,National Jewish Health State Site.csv,Swansea GRIMM rft met,Yes,0.918718297,2.773437578,-0.305532047
+376,CAMP State Site Swansea GRIMM rft pm10_all,CAMP State Site.csv,Swansea GRIMM rft pm10_all,Yes,0.677021394,5.476493075,0.846782388
+377,I-25 Denver State Site Swansea GRIMM rft pm10_all,I-25 Denver State Site.csv,Swansea GRIMM rft pm10_all,Yes,0.791206781,4.241803803,-1.198543323
+378,I-25 Globeville State Site Swansea GRIMM rft pm10_all,I-25 Globeville State Site.csv,Swansea GRIMM rft pm10_all,Yes,0.795219951,5.01677435,0.584437975
+379,La Casa State Site Swansea GRIMM rft pm10_all,La Casa State Site.csv,Swansea GRIMM rft pm10_all,Yes,0.887768967,3.386818011,-0.425607821
+380,National Jewish Health State Site Swansea GRIMM rft pm10_all,National Jewish Health State Site.csv,Swansea GRIMM rft pm10_all,Yes,0.89663324,3.105094634,-0.332820637
+381,CAMP State Site Swansea GRIMM rft pm10,CAMP State Site.csv,Swansea GRIMM rft pm10,Yes,0.66631171,5.620412713,1.475625398
+382,I-25 Denver State Site Swansea GRIMM rft pm10,I-25 Denver State Site.csv,Swansea GRIMM rft pm10,Yes,0.810397608,4.225813938,-1.392521707
+383,I-25 Globeville State Site Swansea GRIMM rft pm10,I-25 Globeville State Site.csv,Swansea GRIMM rft pm10,Yes,0.84765762,4.35872387,0.183240768
+384,La Casa State Site Swansea GRIMM rft pm10,La Casa State Site.csv,Swansea GRIMM rft pm10,Yes,0.923656135,2.857928518,-0.58616884
+385,National Jewish Health State Site Swansea GRIMM rft pm10,National Jewish Health State Site.csv,Swansea GRIMM rft pm10,Yes,0.922583482,2.733803861,-0.489361955
+386,CAMP State Site Swansea GRIMM rft smoke,CAMP State Site.csv,Swansea GRIMM rft smoke,Yes,0.685312916,5.458698647,1.194669733
+387,I-25 Denver State Site Swansea GRIMM rft smoke,I-25 Denver State Site.csv,Swansea GRIMM rft smoke,Yes,0.792187564,4.43003871,-1.338813212
+388,I-25 Globeville State Site Swansea GRIMM rft smoke,I-25 Globeville State Site.csv,Swansea GRIMM rft smoke,Yes,0.839020666,4.499136712,0.538939117
+389,La Casa State Site Swansea GRIMM rft smoke,La Casa State Site.csv,Swansea GRIMM rft smoke,Yes,0.929314776,2.712529374,-0.306616794
+390,National Jewish Health State Site Swansea GRIMM rft smoke,National Jewish Health State Site.csv,Swansea GRIMM rft smoke,Yes,0.922874835,2.703082425,-0.310790182
+391,National Jewish Health State Site Raw,National Jewish Health State Site.csv,None,No,,,
+392,La Casa State Site Raw,La Casa State Site.csv,None,No,,,
+393,I-25 Globeville State Site Raw,I-25 Globeville State Site.csv,None,No,,,
+394,I-25 Denver State Site Raw,I-25 Denver State Site.csv,None,No,,,
+395,CAMP State Site Raw,CAMP State Site.csv,None,No,,,
+396,Swansea GRIMM Raw,Swansea GRIMM.csv,None,No,,,

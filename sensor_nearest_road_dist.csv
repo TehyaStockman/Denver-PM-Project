@@ -1,0 +1,79 @@
+ID,SensorType,Sensor.Start.Date,Road Name,distances (m)
+Adams Birch Street,Airnow,,E 74th Ave,292.9228956
+Adams County Building,Airnow,,E 74th Ave,242.841344
+ADGWF7NQ_3.3,Clarity,19-Dec,I- 70,155.4672435
+AHHQ76RH_3.6,Clarity,19-Dec,US Hwy 85,1.522687472
+AQFDY030_3.1,Clarity,19-Dec,US Hwy 85,105.7641609
+AUL Denver (AJGLJY0D_3.5),Clarity,19-Dec,US Hwy 87,493.3096301
+AUL Denver New (A06KSDHR),Clarity,22-Jan,US Hwy 87,493.3096301
+Boulder-CU/Athens,Airnow,,State Hwy 7,473.8526071
+Bruce Randolph (CS19),Lunar,19-Jun,US Hwy 6,854.0114609
+CAMP,Airnow,,I- 70 Bus,1177.331229
+CAMP Collo (CS13),Lunar,18-Sep,I- 70 Bus,1177.331229
+CAMP MET,State,,I- 70 Bus,1177.331229
+Canary-CDPHE-1,Clarity,,E 58th Ave,424.8648624
+Canary-CDPHE-2,Clarity,,E 58th Ave,445.8925965
+Canary-CDPHE-4,Clarity,,US Hwy 36,1.250946127
+Canary-CDPHE-5,Clarity,,I- 270,656.740225
+Canary-CDPHE-6,Clarity,,US Hwy 287,1544.602558
+CEC Early College (CS31),Lunar,21-Aug,US Hwy 287,314.5855277
+Centennial (CS12),Lunar,18-Aug,I- 70,241.8918856
+Chatfield Park,Airnow,,S Platte Canyon Rd,1908.336232
+College View Elem (A2JCKC55_2.3),Clarity,19-Aug,S Federal Blvd,169.9276485
+College View New(ASMNSDJ8),Clarity,22-Jan,S Federal Blvd,169.9276485
+Collegiate Prep (CS33),Lunar,21-Aug,Peña Blvd,804.0555611
+Columbian Elem (CS23),Lunar,19-Oct,Federal Blvd,64.92719296
+Columbine Elem (CS22),Lunar,19-Oct,N Colorado Blvd,1361.995447
+Denver Montessori High (CS27),Lunar,19-Oct,I- 70,949.2907347
+Emily Griffith HS (CS28),Lunar,19-Oct,I- 70 Bus,605.6745442
+Farrell B Howell (CS25),Lunar,19-Oct,I- 70,365.1252934
+Garden Place (CS8),Lunar,18-Jun,I- 25,198.9126021
+Gust (CS15),Lunar,19-Jun,S Federal Blvd,576.0237156
+Hallett Academy (CS29),Lunar,19-Oct,N Colorado Blvd,1906.81547
+I-25 Denver,Airnow,,I- 25,22.65840874
+I-25 Denver Collo (CS16),Lunar,19-Jun,I- 25,22.65840874
+I-25 Glo Collo (CS2),Lunar,18-May,I- 25,22.10244899
+I-25 Glo Collo (CS3),Lunar,18-May,I- 25,22.10244899
+I-25 Glo Collo (CS4),Lunar,18-May,I- 25,22.10244899
+I-25 Globeville,Airnow,,I- 25,22.10244899
+I-25 Globeville MET,State,,I- 25,22.10244899
+I25 Denver MET,State,,I- 25,22.65840874
+JFK High School (AKLZ678D_3.2),Clarity,19-Dec,US Hwy 285,953.2206528
+Joe Shoemaker (CS21),Lunar,19-Oct,S Havana St,113.0317261
+La Casa,Airnow,,I- 70,416.9961925
+La Casa Collo (CS5),Lunar,18-Jul,I- 70,416.9961925
+La Casa Collo_A0051F54_1.1,Clarity,19-May,I- 70,416.9961925
+La Casa NCORE MET,State,,I- 70,416.9961925
+Manna Pro,,21-May,I- 70,52.81768019
+Manual HS (CS9),Lunar,18-Jun,I- 70 Bus,1740.365626
+Melody-Catalpa,PurpleAir,,US Hwy 36,1210.804725
+Merrill Middle School (CJ_002),Lunar,21-Dec,I- 25,417.7871788
+MLK HS (CS32),Lunar,21-Aug,Peña Blvd,2543.620019
+MSLA (CS34),Lunar,21-Aug,W Alameda Ave,327.6522031
+New JFK HS (AHJKH1S6),Clarity,22-Jan,S Wadsworth Blvd,1036.936399
+Newlon Elementary (CJ_001),Lunar,21-Dec,US Hwy 6,412.6718119
+NJH,Airnow,,State Hwy 2,56.56818671
+NJH CS Collo (CS1),Lunar,18-Jul,State Hwy 2,56.56818671
+Northeast Early (CS10),Lunar,18-Jun,I- 70,141.4250552
+Northfield HS (A88W8NWB_3.4),Clarity,19-Dec,Quebec St,1691.044826
+Northfield HS New (A9C1WMD6),Clarity,22-Jan,Quebec St,1691.044826
+Palmer Elementary (AFL5CTX2_2.1),Clarity,19-Aug,I- 70 Bus,906.0264921
+Pedestrian Bridge,,21-May,I- 70,140.4230394
+Prep Academy (CS17),Lunar,19-Jun,N Colorado Blvd,1453.057334
+Purina,,21-May,US Hwy 85,50.48257784
+Sabin (CS11),Lunar,18-Aug,S Sheridan Blvd,552.9048092
+SAMS MET,State,,I- 70,89.7190442
+South High (CS18),Lunar,19-Jun,I- 25,538.9257429
+Steele & I70,,21-May,US Hwy 6,35.83591994
+STRIVE Prep Kepner (AWCJB9CN_2.2),Clarity,19-Aug,S Federal Blvd,367.8823358
+STRIVE Prep Smart (CS35),Lunar,21-Aug,S Federal Blvd,328.9877954
+STRIVE-Prep New (AD6C1FJJ),Clarity,22-Jan,S Federal Blvd,328.9877954
+Swansea Elementary (CS7),Lunar,18-Jun,I- 70,87.49699968
+The GrowHaus,PurpleAir,,US Hwy 85,977.4718508
+University Park Elem (CS26),Lunar,19-Oct,S Colorado Blvd,835.6506049
+University Prep-Steele (CS20),Lunar,19-Jun,N Colorado Blvd,739.2976425
+Welby,Airnow,,E 74th Ave,828.736777
+Sandra Todd-Williams Academy (CJ_004),Lunar,,Peña Blvd,2033.397095
+Johnson Habitat Park (AXXKFSNJ),Clarity,,US Hwy 85,110.0561747
+La Casa Collo (A4KRV265),Clarity,,I- 70,416.9961925
+JFK HS (CS_Jaspe_005),Lunar,22-Jun,US Hwy 285,953.2206528

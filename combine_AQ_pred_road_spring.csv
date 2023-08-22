@@ -1,0 +1,26 @@
+"","ID","sensor_name","n_rows","avg_all","weekday_morning_avg","weekday_afternoon_avg","SensorType","Sensor.Start.Date","Road.Name","distance_road"
+"2","CEC Early College (CS31)","wide_CEC Early College (CS31).csv_LC_smoke.csv",1457,6.24546277985184,6.99973367047991,6.29641761504443,"Lunar","21-Aug","US Hwy 287",314.5855277
+"3","Centennial (CS12)","wide_Centennial (CS12).csv_LC_smoke.csv",1458,5.33212228888758,5.77678458127789,5.41102821811491,"Lunar","18-Aug","I- 70",241.8918856
+"5","Collegiate Prep (CS33)","wide_Collegiate Prep (CS33).csv_LC_smoke.csv",1444,5.78759935168766,6.34107097039006,5.75631284606866,"Lunar","21-Aug","Peña Blvd",804.0555611
+"6","Columbian Elem (CS23)","wide_Columbian Elem (CS23).csv_LC_smoke.csv",1443,5.68116982236654,5.87010806489958,5.44184750776279,"Lunar","19-Oct","Federal Blvd",64.92719296
+"7","Columbine Elem (CS22)","wide_Columbine Elem (CS22).csv_LC_smoke.csv",1458,4.98485190504889,5.74243175777711,4.92237331118494,"Lunar","19-Oct","N Colorado Blvd",1361.995447
+"8","Denver Montessori High (CS27)","wide_Denver Montessori High (CS27).csv_LC_smoke.csv",1458,4.94464681617571,5.55579313734949,4.87719360536105,"Lunar","19-Oct","I- 70",949.2907347
+"9","Emily Griffith HS (CS28)","wide_Emily Griffith HS (CS28).csv_LC_smoke.csv",1332,5.62867512782004,6.50442426061593,5.55943909874167,"Lunar","19-Oct","I- 70 Bus",605.6745442
+"10","Farrell B Howell (CS25)","wide_Farrell B Howell (CS25).csv_LC_smoke.csv",1458,5.30768377153436,5.79691245255606,5.19729836388848,"Lunar","19-Oct","I- 70",365.1252934
+"11","Garden Place (CS8)","wide_Garden Place (CS8).csv_LC_smoke.csv",1450,5.79391035928569,6.48898286294093,5.52585476805709,"Lunar","18-Jun","I- 25",198.9126021
+"12","Gust (CS15)","wide_Gust (CS15).csv_LC_smoke.csv",1458,4.83139415611825,5.0676415613779,4.95057113751881,"Lunar","19-Jun","S Federal Blvd",576.0237156
+"14","Joe Shoemaker (CS21)","wide_Joe Shoemaker (CS21).csv_LC_smoke.csv",1458,5.03332754262776,5.35935161569696,5.09983781081107,"Lunar","19-Oct","S Havana St",113.0317261
+"15","Manual HS (CS9)","wide_Manual HS (CS9).csv_LC_smoke.csv",1458,6.04535202360034,6.06199925046539,6.14649813251876,"Lunar","18-Jun","I- 70 Bus",1740.365626
+"16","Merrill Middle School (CJ_002)","wide_Merrill Middle School (CJ_002).csv_LC_smoke.csv",1458,5.64179619322466,5.9798956379968,5.90471847404983,"Lunar","21-Dec","I- 25",417.7871788
+"17","MLK HS (CS32)","wide_MLK HS (CS32).csv_LC_smoke.csv",1448,5.67780989106388,6.30662576880484,5.83621454162157,"Lunar","21-Aug","Peña Blvd",2543.620019
+"18","MSLA (CS34)","wide_MSLA (CS34).csv_LC_smoke.csv",1185,6.57489997411099,7.5889224970253,6.43497833844396,"Lunar","21-Aug","W Alameda Ave",327.6522031
+"19","Newlon Elementary (CJ_001)","wide_Newlon Elementary (CJ_001).csv_LC_smoke.csv",1458,5.85637379810826,6.04922699307583,5.87910302694721,"Lunar","21-Dec","US Hwy 6",412.6718119
+"20","Northeast Early (CS10)","wide_Northeast Early (CS10).csv_LC_smoke.csv",1162,5.33789516618823,5.72726629604672,5.12411773689274,"Lunar","18-Jun","I- 70",141.4250552
+"23","Prep Academy (CS17)","wide_Prep Academy (CS17).csv_LC_smoke.csv",701,4.84558763235496,5.30474216764418,5.25741987906274,"Lunar","19-Jun","N Colorado Blvd",1453.057334
+"24","Sabin (CS11)","wide_Sabin (CS11).csv_LC_smoke.csv",1458,4.76411294573272,5.02925807280432,4.66680495666489,"Lunar","18-Aug","S Sheridan Blvd",552.9048092
+"25","Sandra Todd-Williams Academy (CJ_004)","wide_Sandra Todd-Williams Academy (CJ_004).csv_LC_smoke.csv",744,5.96653189447266,6.72559419463262,5.80741508167758,"Lunar","","Peña Blvd",2033.397095
+"26","South High (CS18)","wide_South High (CS18).csv_LC_smoke.csv",1067,5.46594963666967,5.9507862450509,5.68128396962005,"Lunar","19-Jun","I- 25",538.9257429
+"28","STRIVE Prep Smart (CS35)","wide_STRIVE Prep Smart (CS35).csv_LC_smoke.csv",1458,5.88932387428602,6.16214473052787,5.88419706533776,"Lunar","21-Aug","S Federal Blvd",328.9877954
+"29","Swansea Elementary (CS7)","wide_Swansea Elementary (CS7).csv_LC_smoke.csv",1458,5.27779729612613,5.97750783374566,5.01166110520929,"Lunar","18-Jun","I- 70",87.49699968
+"30","University Park Elem (CS26)","wide_University Park Elem (CS26).csv_LC_smoke.csv",1458,5.16779501451385,5.39351953722419,5.28583400313144,"Lunar","19-Oct","S Colorado Blvd",835.6506049
+"31","University Prep-Steele (CS20)","wide_University Prep-Steele (CS20).csv_LC_smoke.csv",1458,4.76615704658957,5.21087685492802,4.83168315799188,"Lunar","19-Jun","N Colorado Blvd",739.2976425

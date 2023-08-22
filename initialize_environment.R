@@ -31,6 +31,7 @@ library(mlbench)
 library(Metrics)
 library(rlist)
 library(tools)
+library(openair)
 
 
 
@@ -52,4 +53,8 @@ meta_data_dir <- paste(wd, 'Meta_Data', sep = '/')
 alg_data_dir <- paste(wd, 'Data_from_Alg', sep = '/')
 corr_alg_dir <- paste(wd, 'Corr_Alg_Dir', sep = '/')
 new_alg_data_dir <- paste(wd, 'Data_for_Alg', sep = '/')
+
+sensor_subset_dir <- paste(wd, 'Processed_Data/Data_By_Sensor_Wide_Subset', sep = '/')
+corr_alg_subset_dir <- paste(wd, 'Corr_Alg_Subset_Dir', sep = '/')
+predicted_pm_dir <- paste(wd, "Predicted_PM", sep = '/')
 

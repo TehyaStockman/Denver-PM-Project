@@ -42,20 +42,41 @@ processed_data$Time <- format(strptime(processed_data$Time, "%I:%M %p"), tz = "M
   
   
 format <- "%Y-%m-%d %H:%M"
+
+
   
 processed_data$Date_Time <- as.POSIXct(paste(processed_data$Date, processed_data$Time), format=format)
 processed_data <- subset(processed_data, select = c("Date_Time", "PM2.5"))
 names(processed_data)[names(processed_data) == "Date_Time"] <- "date"
-names(processed_data)[names(processed_data) == "X..SWAN"] <- "SWAN"
+#names(processed_data)[names(processed_data) == "X..SWAN"] <- "SWAN"
   
 AQ_data$I25DEN <- as.numeric(AQ_data$I25DEN)
 processed_data$date <- with_tz(processed_data$date, "MST")
-  #processed_data$date <- processed_data$date - 2*60*60
+processed_data$date <- processed_data$date + 60*60
   
-  
+
 write.csv(processed_data, 'I-25 Globeville PM2.5.csv')
 
 
+temp_data2 <- read.csv('Globeville.csv', header = TRUE)
+
+
+
+glo_data <- subset(temp_data2, select = c("date","val"))
+
+glo_data$date <- as.POSIXct(glo_data$date, tz = 'MST', tryformats = c('%Y-%m-%d HH:MM'))
+
+
+all_glo <- merge(glo_data, processed_data, by = 'date')
+all_glo <- na.omit(all_glo)
+
+all_glo <- all_glo[all_glo$date >= '2022-08-15 00:00:00' &all_glo$date <= '2022-09-16 00:00:00',]
+
+ggplot(all_glo, aes(x=val, y=PM2.5)) +
+  stat_poly_line(color = '#1B9E77') +
+  stat_poly_eq(use_label(c('eq', 'R2'))) +
+  geom_point() +
+  theme_bw()
 
 AQ_data <- drop_na(AQ_data$date)
 
